@@ -1,0 +1,28 @@
+{
+  "name": "corona",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lerna": "lerna",
+    "install": "lerna install",
+    "clean": "rimraf node_modules",
+    "reset": "lerna run clean --stream && lerna clean -y && lerna bootstrap",
+    "bootstrap": "lerna bootstrap",
+    "release": "lerna publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohanObrink/corona.git"
+  },
+  "author": "Johan Öbrink <johan.obrink@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohanObrink/corona/issues"
+  },
+  "homepage": "https://github.com/JohanObrink/corona#readme",
+  "devDependencies": {
+    "lerna": "^3.20.2",
+    "rimraf": "^3.0.2"
+  }
+}

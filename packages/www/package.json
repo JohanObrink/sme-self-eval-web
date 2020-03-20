@@ -1,0 +1,43 @@
+{
+  "name": "www",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Johan Öbrink <johan.obrink@gmail.com>",
+  "homepage": "https://github.com/JohanObrink/corona/tree/master/packages/www#readme",
+  "license": "ISC",
+  "main": "lib/www.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohanObrink/corona.git"
+  },
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "bugs": {
+    "url": "https://github.com/JohanObrink/corona/issues"
+  },
+  "dependencies": {
+    "react": "16.13.0",
+    "react-dom": "16.13.0",
+    "semantic-ui-css": "2.4.1",
+    "semantic-ui-react": "0.88.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jest": "^25.1.0",
+    "parcel-bundler": "^1.12.4"
+  }
+}
