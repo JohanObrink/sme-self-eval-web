@@ -11,7 +11,7 @@ export default () => {
       <div>
         <h1>Hello World!</h1>
         <YesNoQuestion text="some other text" />
-        <SelectQuestion text="some other text" data={[{label: 'a'}, {label: 'b'}, {label: 'c'}]} />
+        <SelectQuestion text="some other text" data={[{label: 'a', value: 'a'}, {label: 'b', value: 'b'}, {label: 'c', value: 'c'}]} />
         <SliderQuestion />
         <Form />
       </div>
