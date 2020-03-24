@@ -2,7 +2,6 @@ import React, { useReducer } from 'react'
 import FormContext from './form/FormContext'
 import { initialValue, reducer } from './form/formReducer'
 import Form from './form/Form'
-import { SelectQuestion, SliderQuestion, YesNoQuestion, InputQuestion } from './components'
 
 export default () => {
   const [state, dispatch] = useReducer(reducer, initialValue)

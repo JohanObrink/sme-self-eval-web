@@ -1,13 +1,14 @@
-import { actions, steps } from './constants'
+import { actions } from './constants'
 
 export const initialValue = {
-  currentStep: steps.START
+  currentStep: 0
 }
 
 export const reducer = (state, action) => {
   switch (action.type) {
     case actions.ANSWER:
-      state = {...state, currentStep: steps.STEP2}
+      const currentStep = state.currentStep + 1
+      state = {...state, currentStep}
       break
   }
   return state

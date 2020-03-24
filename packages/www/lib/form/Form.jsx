@@ -1,25 +1,21 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { Step1, Step2 } from './steps'
+import React, { useContext, useState, useEffect } from 'react'
+import { Step1, Step2, Step3, Step4, Step5, Step6, Step7, Step8 } from './steps'
 import FormContext from './FormContext'
-import { steps } from './constants'
+
 
 const Form = () => {
   const { state } = useContext(FormContext)
-  const getCurrentStep = () => {
-    switch (state.currentStep) {
-      case steps.START:
-        return <Step1 />
-      case steps.STEP2:
-        return <Step2 />
-      default:
-        return <></>
-    }
-  }
+  const steps = [<Step1 />, <Step2 />, <Step3 />, <Step4 />, <Step5 />, <Step6 />, <Step7 />, <Step8 />]
+  const [currentStep, setCurrentStep] = useState(<>Hej</>)
+  useEffect(() => {
+    const newStep = steps[state.currentStep]
+    setCurrentStep(newStep)
+  }, [state.currentStep])
 
   return (
     <>
       <h2>Form</h2>
-      { getCurrentStep() }
+      { currentStep }
     </>
   )
 }

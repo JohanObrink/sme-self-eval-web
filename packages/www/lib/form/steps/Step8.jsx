@@ -9,10 +9,7 @@ export default () => {
   
   return (
     <>
-      <h2>Hur påverkas din verksamhet av Corona epidemin?</h2>
-      <ShortTermLayoffs />
-      <SickLeave />
-      <Deferral />
+      <h2>Kontakt</h2>
       <Button theme="primary" onClick={() => dispatch({type: actions.ANSWER})}>Next</Button>
     </>
   )

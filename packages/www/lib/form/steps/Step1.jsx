@@ -4,11 +4,12 @@ import FormContext from '../FormContext'
 import { actions } from '../constants'
 import { LineOfBusiness, Turnover, NumberOfEmployees } from '../questions'
 
-const Step1 = () => {
+export default () => {
   const {dispatch} = useContext(FormContext)
   
   return (
     <>
+      <h2>Din verksamhet</h2>
       <LineOfBusiness />
       <Turnover />
       <NumberOfEmployees />
@@ -16,5 +17,3 @@ const Step1 = () => {
     </>
   )
 }
-
-export default Step1
