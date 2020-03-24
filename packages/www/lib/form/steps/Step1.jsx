@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Button } from '@sebgroup/react-components/dist/Button'
 import FormContext from '../FormContext'
 import { actions } from '../constants'
-import { LineOfBusiness, Revenue, NumberOfEmployees } from '../questions'
+import { LineOfBusiness, Turnover, NumberOfEmployees } from '../questions'
 
 const Step1 = () => {
   const {dispatch} = useContext(FormContext)
@@ -10,7 +10,7 @@ const Step1 = () => {
   return (
     <>
       <LineOfBusiness />
-      <Revenue />
+      <Turnover />
       <NumberOfEmployees />
       <Button theme="primary" onClick={() => dispatch({type: actions.ANSWER})}>Next</Button>
     </>

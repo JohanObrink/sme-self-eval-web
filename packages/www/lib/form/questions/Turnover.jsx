@@ -6,7 +6,7 @@ export default () => {
     <div>
       <InputQuestion
         type="number"
-        headline="Hur många anställda har ni?" />
+        headline="Hur stor omsättning har ni?" />
     </div>
   )
 }
