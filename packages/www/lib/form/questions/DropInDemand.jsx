@@ -5,7 +5,7 @@ export default () => {
   return (
     <div>
       <YesNoQuestion
-        headline="Hög egen sjukfrånvaro eller bland anställda" />
+        headline="Har du sett en sjunkande efterfrågan?" />
     </div>
   )
 }

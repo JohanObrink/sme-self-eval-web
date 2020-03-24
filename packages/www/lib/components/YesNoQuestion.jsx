@@ -13,8 +13,8 @@ export default ({ headline = 'Yes/No Question', value=null, ...props }) => {
   }, [val])
   return (
     <Question {...{headline, ...props}}>
-      <Button theme={theme.yes} onClick={() => setVal(true)}>Yes</Button>
-      <Button theme={theme.no} onClick={() => setVal(false)}>No</Button>
+      <Button theme={theme.yes} onClick={() => setVal(true)}>Ja</Button>
+      <Button theme={theme.no} onClick={() => setVal(false)}>Nej</Button>
     </Question>
   )
 }
