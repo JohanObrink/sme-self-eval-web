@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Question from './Question'
 import { Button } from '@sebgroup/react-components/dist/Button'
 
-export default ({ headline = 'Yes/No Question', value=null, ...props }) => {
+export default ({ headline = 'Yes/No Question', value=null, onChange, ...props }) => {
   const [theme, setTheme] = useState({yes: 'secondary', no: 'secondary'})
   const [val, setVal] = useState(value)
   useEffect(() => {
@@ -11,6 +11,7 @@ export default ({ headline = 'Yes/No Question', value=null, ...props }) => {
       no: val === false ? 'primary' : 'secondary'
     })
   }, [val])
+  useEffect(() => { onChange && onChange(value) }, [value])
   return (
     <Question {...{headline, ...props}}>
       <Button theme={theme.yes} onClick={() => setVal(true)}>Ja</Button>

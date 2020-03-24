@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Question from './Question'
 import { TextBox } from '@sebgroup/react-components/dist/TextBox'
 
-export default ({ headline='Input Question', type='text', ...props }) => {
+export default ({ headline='Input Question', type='text', onChange, ...props }) => {
   function valueOrDefault (val) {
     if (val) return val
     switch (type) {
@@ -13,6 +13,7 @@ export default ({ headline='Input Question', type='text', ...props }) => {
     }
   }
   const [value, setValue] = useState(valueOrDefault(props.value))
+  useEffect(() => { onChange && onChange(value)}, [value])
   return (
     <Question {...{headline, ...props}}>
       <TextBox type={type} value={value} onChange={(event) => setValue(event.target.value)} />
