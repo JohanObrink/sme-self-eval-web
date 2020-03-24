@@ -27,9 +27,11 @@
   },
   "dependencies": {
     "@sebgroup/bootstrap": "5.1.1",
+    "@sebgroup/fonts": "^1.0.0",
     "@sebgroup/react-components": "2.1.1",
     "react": "16.13.0",
-    "react-dom": "16.13.0"
+    "react-dom": "16.13.0",
+    "style": "0.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
@@ -41,5 +43,8 @@
     "parcel-bundler": "^1.12.4",
     "sass": "^1.26.3",
     "typescript": "^3.8.3"
+  },
+  "sass": {
+    "includePaths": ["./node_modules"]
   }
 }

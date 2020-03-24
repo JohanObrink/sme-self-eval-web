@@ -1,0 +1,52 @@
+/*!
+* SEB Style - a theme for Bootstrap 4 (https://github.com/sebgroup/bootstrap)
+* Copyright 2018 SEB
+*/
+
+@import "@sebgroup/bootstrap/scss/styles/functions";
+@import "@sebgroup/bootstrap/scss/variables";
+@import "@sebgroup/bootstrap/scss/mixins/mixins";
+@import "@sebgroup/bootstrap/scss/styles/animations";
+@import "@sebgroup/bootstrap/scss/styles/root";
+@import "@sebgroup/bootstrap/scss/styles/print";
+@import "@sebgroup/bootstrap/scss/styles/reboot";
+@import "@sebgroup/bootstrap/scss/styles/type";
+@import "@sebgroup/bootstrap/scss/styles/images";
+@import "@sebgroup/bootstrap/scss/styles/code";
+@import "@sebgroup/bootstrap/scss/styles/grid";
+@import "@sebgroup/bootstrap/scss/styles/tables";
+@import "@sebgroup/bootstrap/scss/styles/forms";
+@import "@sebgroup/bootstrap/scss/styles/buttons";
+@import "@sebgroup/bootstrap/scss/styles/transitions";
+@import "@sebgroup/bootstrap/scss/styles/dropdown";
+@import "@sebgroup/bootstrap/scss/styles/button-group";
+@import "@sebgroup/bootstrap/scss/styles/input-group";
+@import "@sebgroup/bootstrap/scss/styles/custom-forms";
+@import "@sebgroup/bootstrap/scss/styles/nav";
+@import "@sebgroup/bootstrap/scss/styles/navbar";
+@import "@sebgroup/bootstrap/scss/styles/card";
+@import "@sebgroup/bootstrap/scss/styles/breadcrumb";
+@import "@sebgroup/bootstrap/scss/styles/pagination";
+@import "@sebgroup/bootstrap/scss/styles/badge";
+@import "@sebgroup/bootstrap/scss/styles/jumbotron";
+@import "@sebgroup/bootstrap/scss/styles/alert";
+@import "@sebgroup/bootstrap/scss/styles/progress";
+@import "@sebgroup/bootstrap/scss/styles/media";
+@import "@sebgroup/bootstrap/scss/styles/list-group";
+@import "@sebgroup/bootstrap/scss/styles/close";
+@import "@sebgroup/bootstrap/scss/styles/toasts";
+@import "@sebgroup/bootstrap/scss/styles/modal";
+@import "@sebgroup/bootstrap/scss/styles/tooltip";
+@import "@sebgroup/bootstrap/scss/styles/popover";
+@import "@sebgroup/bootstrap/scss/styles/carousel";
+@import "@sebgroup/bootstrap/scss/styles/spinners";
+@import "@sebgroup/bootstrap/scss/styles/utilities";
+@import "@sebgroup/bootstrap/scss/styles/print";
+@import "@sebgroup/bootstrap/scss/styles/fifth-element"; // SEB Specific
+@import "@sebgroup/bootstrap/scss/styles/skeleton-loader"; // SEB Specific
+@import "@sebgroup/bootstrap/scss/styles/scroll"; // SEB Specific
+@import "@sebgroup/bootstrap/scss/third-parties/third-parties"; // SEB Specific
+
+$seb-font-path: "/node_modules/@sebgroup/fonts/fonts";
+@import "@sebgroup/fonts/scss/path";
+// @import '@sebgroup/fonts/scss/seb-fonts'; // SEB Specific
