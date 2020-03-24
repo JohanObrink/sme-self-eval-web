@@ -7,7 +7,7 @@ export default () => {
   const [state, dispatch] = useReducer(reducer, initialValue)
   return (
     <FormContext.Provider value={{state, dispatch}}>
-      <div>
+      <div className="container">
         <h1>Hello World!</h1>
         <Form />
       </div>
