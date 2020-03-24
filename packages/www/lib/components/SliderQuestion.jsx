@@ -4,7 +4,7 @@ import { Slider } from '@sebgroup/react-components/dist/Slider'
 
 export default ({ headline='Slider Question', min=0, max=100, step=1, ...props }) => {
   return (
-    <Question headline {...props}>
+    <Question {...{headline, ...props}}>
       <Slider {...{min, max, step}} />
     </Question>
   )

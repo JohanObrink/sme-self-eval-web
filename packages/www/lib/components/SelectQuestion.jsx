@@ -4,7 +4,7 @@ import { Dropdown } from '@sebgroup/react-components/dist/Dropdown'
 
 export default ({ headline='Select Question', data, ...props }) => {
   return (
-    <Question headline {...props}>
+    <Question {...{headline, ...props}}>
       <Dropdown list={data} />
     </Question>
   )
