@@ -5,7 +5,7 @@ export default () => {
   return (
     <div>
       <YesNoQuestion
-        headline="Tagit beslut om korttidspermittering?" />
+        headline="Pausa pensions-avsättningar till personal?" />
     </div>
   )
 }
