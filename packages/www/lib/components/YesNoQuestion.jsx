@@ -11,7 +11,7 @@ export default ({ headline = 'Yes/No Question', value=null, onChange, ...props }
       no: val === false ? 'primary' : 'secondary'
     })
   }, [val])
-  useEffect(() => { onChange && onChange(value) }, [value])
+  useEffect(() => { onChange && onChange(val) }, [val])
   return (
     <Question {...{headline, ...props}}>
       <Button theme={theme.yes} onClick={() => setVal(true)}>Ja</Button>

@@ -4,7 +4,7 @@ import { Dropdown } from '@sebgroup/react-components/dist/Dropdown'
 
 export default ({ headline='Select Question', data, onChange, ...props }) => {
   const [selected, setSelected] = useState()
-  useEffect(() => { onChange && onChange(value)}, [value])
+  useEffect(() => { onChange && onChange(selected)}, [selected])
   return (
     <Question {...{headline, ...props}}>
       <Dropdown list={data} selectedValue={selected} onChange={(val) => setSelected(val)} />
