@@ -7,12 +7,14 @@ import { ProgressBar } from '@sebgroup/react-components/dist/ProgressBar/Progres
 export default () => {
   const [state, dispatch] = useReducer(reducer, initialValue)
   return (
-    <FormContext.Provider value={{state, dispatch}}>
-      <ProgressBar value={(state.currentStepIndex / (state.steps.length - 1) ) * 100} />
-      <div className="container">
+    <FormContext.Provider value={{ state, dispatch }}>
+      <ProgressBar
+        value={(state.currentStepIndex / (state.steps.length - 1)) * 100}
+      />
+      <div className='container'>
         <h1>Utvärdera ditt företag...</h1>
         <Form />
       </div>
     </FormContext.Provider>
   )
-}
+};
