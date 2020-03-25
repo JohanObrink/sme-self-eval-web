@@ -42,7 +42,7 @@ export const initialValue = {
       ]
     },
     {
-      headline: 'Hur påverkas din verksamhet av Corona epidemin?',
+      headline: 'Hur påverkas din verksamhet av coronaepidemin?',
       questions: [
         <DropInDemand key="dropInDemand" />,
         <SickLeave key="sickLeave" />,

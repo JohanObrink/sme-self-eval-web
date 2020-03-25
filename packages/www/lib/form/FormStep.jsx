@@ -8,7 +8,7 @@ export default ({ headline, questions }) => {
     <>
     <div className="row">
       <div className="col">
-      <h2>{ headline }</h2>
+      <h3>{ headline }</h3>
       </div>
     </div>
         { questions }

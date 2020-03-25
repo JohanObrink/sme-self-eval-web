@@ -22,7 +22,6 @@ const Form = () => {
 
   return (
     <>
-      <h2>Form</h2>
       <FormStep {...currentStep} />
       <div className="row justify-content-end">
         <div className="col-auto prev-next-buttons">
