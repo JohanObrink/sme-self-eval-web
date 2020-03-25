@@ -3,8 +3,9 @@ import { InputQuestion } from '../../components'
 
 export default () => {
   return (
-    <div>
+    <div className="row">
       <InputQuestion
+        className="col"
         type="text"
         headline="Vilka kostnadsbesparingar går att göra på kort sikt?" />
     </div>

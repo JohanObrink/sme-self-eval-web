@@ -3,8 +3,9 @@ import { SliderQuestion } from '../../components'
 
 export default () => {
   return (
-    <div>
+    <div className="row">
       <SliderQuestion
+        className="col"
         headline="Värde på lager som snabbt tappar värde/förstörs:"
         min={0}
         max={10000000}

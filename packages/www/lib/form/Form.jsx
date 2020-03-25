@@ -24,7 +24,7 @@ const Form = () => {
     <>
       <h2>Form</h2>
       <FormStep {...currentStep} />
-      <div className="row justify-content-end">
+      <div className="row justify-content-end prev-next-buttons">
         <div className="col-auto">
           { navState.prev && <Button theme="secondary" onClick={() => dispatch({type: actions.PREVIOUS})}>Tidigare</Button> }
           { navState.next && <Button theme="primary" onClick={() => dispatch({type: actions.NEXT})}>Nästa</Button> }
