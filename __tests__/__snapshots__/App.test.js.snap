@@ -29,6 +29,7 @@ Array [
         <h3 />
       </div>
     </div>
+    <hr />
     <div
       className="row justify-content-end"
     >
