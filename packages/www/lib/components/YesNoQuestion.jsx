@@ -8,8 +8,10 @@ export default ({ headline = 'Yes/No Question', value=null, onChange, ...props }
   useEffect(() => { onChange && onChange(val) }, [val])
   return (
     <Question {...{headline, ...props}}>
-      <RadioButton group={"group"} label="Ja" radioValue="ja" value={val} onChange={(value) => setVal(value)} />
-      <RadioButton group={"group"} label="Nej" radioValue="nej" value={val} onChange={(value) => setVal(value)} />
+      <div className="form-check form-check-inline">
+        <RadioButton group={"group"} label="Ja" radioValue="ja" value={val} onChange={(value) => setVal(value)} />
+        <RadioButton group={"group"} label="Nej" radioValue="nej" value={val} onChange={(value) => setVal(value)} />
+      </div>
     </Question>
   )
 }
