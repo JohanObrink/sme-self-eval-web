@@ -12,9 +12,9 @@ export default () => {
         value={(state.currentStepIndex / (state.steps.length - 1)) * 100}
       />
       <div className='container'>
-        <h1>Utvärdera ditt företag...</h1>
+        <h1>Titel på verktyget</h1>
         <Form />
       </div>
     </FormContext.Provider>
   )
-};
+}
