@@ -3,8 +3,9 @@ import { InputQuestion } from '../../components'
 
 export default () => {
   return (
-    <div>
+    <div className="row">
       <InputQuestion
+        className="col"
         type="number"
         headline="Hur många anställda har ni?" />
     </div>

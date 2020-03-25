@@ -9,8 +9,9 @@ const tooltip = (val) => {
 
 export default () => {
   return (
-    <div>
+    <div className="row">
       <SliderQuestion
+        className="col"
         headline="Ange aktuell kassa:"
         min={0}
         max={10000000}

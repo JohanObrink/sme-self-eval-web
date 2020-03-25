@@ -3,8 +3,9 @@ import { YesNoQuestion } from '../../components'
 
 export default () => {
   return (
-    <div>
+    <div className="row">
       <YesNoQuestion
+        className="col"
         headline="Har du sett en sjunkande efterfrågan?" />
     </div>
   )

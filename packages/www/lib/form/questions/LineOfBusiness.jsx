@@ -8,8 +8,9 @@ export default (props) => {
     {label: 'c', value: 'c'}
   ]
   return (
-    <div>
+    <div className="row">
       <SelectQuestion
+        className="col"
         headline="Vilken bransch jobbar du inom?"
         data={branches} />
     </div>

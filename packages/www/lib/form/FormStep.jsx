@@ -6,8 +6,12 @@ export default ({ headline, questions }) => {
   
   return (
     <>
+    <div className="row">
+      <div className="col">
       <h2>{ headline }</h2>
-      { questions }
+      </div>
+    </div>
+        { questions }
     </>
   )
 }

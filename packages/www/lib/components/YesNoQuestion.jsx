@@ -1,21 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import Question from './Question'
-import { Button } from '@sebgroup/react-components/dist/Button'
+import { RadioButton } from '@sebgroup/react-components/dist/RadioButton'
 
 export default ({ headline = 'Yes/No Question', value=null, onChange, ...props }) => {
-  const [theme, setTheme] = useState({yes: 'secondary', no: 'secondary'})
   const [val, setVal] = useState(value)
-  useEffect(() => {
-    setTheme({
-      yes: val === true ? 'primary' : 'secondary',
-      no: val === false ? 'primary' : 'secondary'
-    })
-  }, [val])
+  
   useEffect(() => { onChange && onChange(val) }, [val])
   return (
     <Question {...{headline, ...props}}>
-      <Button theme={theme.yes} onClick={() => setVal(true)}>Ja</Button>
-      <Button theme={theme.no} onClick={() => setVal(false)}>Nej</Button>
+      <RadioButton group={"group"} label="Ja" radioValue="ja" value={val} onChange={(value) => setVal(value)} />
+      <RadioButton group={"group"} label="Nej" radioValue="nej" value={val} onChange={(value) => setVal(value)} />
     </Question>
   )
 }
