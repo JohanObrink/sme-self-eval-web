@@ -4,14 +4,13 @@ import { actions } from './constants'
 import FormStep from './FormStep'
 import FormContext from './FormContext'
 
-
 const Form = () => {
   const { state, dispatch } = useContext(FormContext)
   const [currentStep, setCurrentStep] = useState(<></>)
   const [navState, setNavState] = useState({ prev: false, next: false })
 
   useEffect(() => {
-    const {steps, currentStepIndex} = state
+    const { steps, currentStepIndex } = state
     const newStep = steps[currentStepIndex]
     setCurrentStep(newStep)
     setNavState({
@@ -23,10 +22,11 @@ const Form = () => {
   return (
     <>
       <FormStep {...currentStep} />
-      <div className="row justify-content-end">
-        <div className="col-auto prev-next-buttons">
-          { navState.prev && <Button theme="secondary" onClick={() => dispatch({type: actions.PREVIOUS})}>Tidigare</Button> }
-          { navState.next && <Button theme="primary" onClick={() => dispatch({type: actions.NEXT})}>Nästa</Button> }
+      <hr />
+      <div className='row justify-content-end'>
+        <div className='col-auto prev-next-buttons'>
+          {navState.prev && <Button theme='secondary' onClick={() => dispatch({ type: actions.PREVIOUS })}>Tidigare</Button>}
+          {navState.next && <Button theme='primary' onClick={() => dispatch({ type: actions.NEXT })}>Nästa</Button>}
         </div>
       </div>
     </>
