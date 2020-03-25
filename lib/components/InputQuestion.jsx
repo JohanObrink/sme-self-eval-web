@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Question from './Question'
-import { TextBox } from '@sebgroup/react-components/dist/TextBox'
+import { TextBox } from '@sebgroup/react-components/dist/TextBox/TextBox'
 
 export default ({ headline='Input Question', type='text', onChange, ...props }) => {
   function valueOrDefault (val) {

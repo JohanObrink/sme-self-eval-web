@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { Button } from '@sebgroup/react-components/dist/Button'
+import { Button } from '@sebgroup/react-components/dist/Button/Button'
 import { actions } from './constants'
 import FormStep from './FormStep'
 import FormContext from './FormContext'
