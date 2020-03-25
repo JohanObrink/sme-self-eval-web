@@ -1,4 +1,4 @@
-runtime: python37
+runtime: nodejs12
 handlers:
 - url: /
   static_files: dist/index.html
