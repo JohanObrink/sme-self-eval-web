@@ -6,7 +6,7 @@ export default () => {
     <div className="row">
       <YesNoQuestion
         className="col"
-        headline="Hög egen sjukfrånvaro eller bland anställda" />
+        headline="Hög egen sjukfrånvaro eller bland anställda?" />
     </div>
   )
 }
