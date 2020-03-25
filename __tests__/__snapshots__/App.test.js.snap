@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders the title 1`] = `
+Array [
+  <div
+    className="custom-progress"
+  >
+    <div
+      className="custom-progress-bar"
+      style={
+        Object {
+          "width": "0%",
+        }
+      }
+    />
+  </div>,
+  <div
+    className="container"
+  >
+    <h1>
+      Utvärdera ditt företag...
+    </h1>
+    <div
+      className="row"
+    >
+      <div
+        className="col"
+      >
+        <h3 />
+      </div>
+    </div>
+    <div
+      className="row justify-content-end"
+    >
+      <div
+        className="col-auto prev-next-buttons"
+      />
+    </div>
+  </div>,
+]
+`;

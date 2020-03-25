@@ -2,7 +2,7 @@ import React, { useReducer } from 'react'
 import FormContext from './form/FormContext'
 import { initialValue, reducer } from './form/formReducer'
 import Form from './form/Form'
-import { ProgressBar } from '@sebgroup/react-components/dist/ProgressBar'
+import { ProgressBar } from '@sebgroup/react-components/dist/ProgressBar/ProgressBar'
 
 export default () => {
   const [state, dispatch] = useReducer(reducer, initialValue)

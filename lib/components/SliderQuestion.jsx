@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Question from './Question'
-import { Slider } from '@sebgroup/react-components/dist/Slider'
+import { Slider } from '@sebgroup/react-components/dist/Slider/Slider'
 
 const noTemplate = (val) => (val)
 

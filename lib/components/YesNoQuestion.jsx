@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Question from './Question'
-import { RadioButton } from '@sebgroup/react-components/dist/RadioButton'
+import { RadioButton } from '@sebgroup/react-components/dist/RadioButton/RadioButton'
 
 export default ({ headline = 'Yes/No Question', value=null, onChange, ...props }) => {
   const [val, setVal] = useState(value)

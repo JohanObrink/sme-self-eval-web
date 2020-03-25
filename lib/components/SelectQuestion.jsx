@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Question from './Question'
-import { Dropdown } from '@sebgroup/react-components/dist/Dropdown'
+import { Dropdown } from '@sebgroup/react-components/dist/Dropdown/Dropdown'
 
 export default ({ headline='Select Question', data, onChange, ...props }) => {
   const [selected, setSelected] = useState()
