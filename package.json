@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "> TODO: description",
   "author": "Johan Öbrink <johan.obrink@gmail.com>",
-  "homepage": "https://github.com/JohanObrink/corona/tree/master/packages/www#readme",
+  "homepage": "https://github.com/JohanObrink/sme-self-eval-web/tree/master/packages/www#readme",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JohanObrink/corona.git"
+    "url": "git+https://github.com/JohanObrink/sme-self-eval-web.git"
   },
   "scripts": {
     "start": "parcel index.html --no-source-maps",
@@ -23,7 +23,7 @@
     "test:watch": "jest --watchAll"
   },
   "bugs": {
-    "url": "https://github.com/JohanObrink/corona/issues"
+    "url": "https://github.com/JohanObrink/sme-self-eval-web/issues"
   },
   "dependencies": {
     "@sebgroup/bootstrap": "5.1.1",
