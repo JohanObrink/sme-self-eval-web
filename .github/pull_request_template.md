@@ -2,7 +2,7 @@
 
 ## It makes the app better by
 
-[short description]
+Adding this as PR template
 
 ## Experience the awesomeness by
 
@@ -10,4 +10,4 @@
 
 ## It goes without saying that I
 
-[ ] Added/updated tests for this
+* [x] Added/updated tests for this
