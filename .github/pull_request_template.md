@@ -2,7 +2,7 @@
 
 ## It makes the app better by
 
-Adding this as PR template
+[short description]
 
 ## Experience the awesomeness by
 
