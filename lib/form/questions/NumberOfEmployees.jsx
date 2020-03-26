@@ -1,13 +1,17 @@
 import React from 'react'
-import { InputQuestion } from '../../components'
+import { SliderQuestion } from '../../components'
 
 export default () => {
   return (
-    <div className="row">
-      <InputQuestion
-        className="col"
-        type="number"
-        headline="Hur många anställda har ni?" />
+    <div className='row'>
+      <SliderQuestion
+        className='col'
+        headline='Hur många anställda har ni?'
+        min={1}
+        max={100}
+        step={1}
+        tooltip={(val) => `${val} anställda`}
+      />
     </div>
   )
 }
