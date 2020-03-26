@@ -18,7 +18,8 @@
   "scripts": {
     "start": "parcel index.html --no-source-maps",
     "build": "parcel build index.html --no-source-maps",
-    "lint": "eslint ./lib/**/*.js ./__tests__/**/*.js --fix",
+    "lint": "eslint ./lib/**/*.js* ./__tests__/**/*.js --fix",
+    "lint:watch": "esw ./lib/**/*.js* ./__tests__/**/*.js --watch --fix",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "lintAndTest": "npm run lint && npm test"
@@ -49,6 +50,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-standard": "^4.0.1",
+    "eslint-watch": "^6.0.1",
     "husky": "^4.2.3",
     "jest": "^25.1.0",
     "lint-staged": "^10.0.9",
