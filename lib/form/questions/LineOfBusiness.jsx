@@ -1,18 +1,16 @@
 import React from 'react'
 import { SelectQuestion } from '../../components'
+import { getList } from '../linesOfBusiness'
 
 export default (props) => {
-  const branches = [
-    {label: 'a', value: 'a'},
-    {label: 'b', value: 'b'},
-    {label: 'c', value: 'c'}
-  ]
+  const list = getList()
+
   return (
     <div className="row">
       <SelectQuestion
         className="col"
         headline="Vilken bransch jobbar du inom?"
-        data={branches} />
+        data={list} />
     </div>
   )
 }

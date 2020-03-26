@@ -18,8 +18,8 @@
   "scripts": {
     "start": "parcel index.html --no-source-maps",
     "build": "parcel build index.html --no-source-maps",
-    "lint": "eslint ./lib/**/*.js* ./__tests__/**/*.js --fix",
-    "lint:watch": "esw ./lib/**/*.js* ./__tests__/**/*.js --watch --fix --color",
+    "lint": "eslint ./lib/**/*.js* --fix",
+    "lint:watch": "esw ./lib/**/*.js* --watch --fix --color",
     "test": "jest --config jest.config.approval.js",
     "test:watch": "jest --watchAll",
     "lintAndTest": "npm run lint && npm test"
