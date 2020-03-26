@@ -21,7 +21,8 @@
     "lint": "eslint ./lib/**/*.js* ./__tests__/**/*.js --fix",
     "lint:watch": "esw ./lib/**/*.js* ./__tests__/**/*.js --watch --fix",
     "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "lintAndTest": "npm run lint && npm test"
   },
   "bugs": {
     "url": "https://github.com/JohanObrink/sme-self-eval-web/issues"
