@@ -4,6 +4,7 @@ handlers:
   static_files: dist/index.html
   upload: dist/index.html
   mime_type: text/html; charset=UTF-8
+  expiration: 1m
 
 - url: /(.*\.(js))
   static_files: dist/\1
