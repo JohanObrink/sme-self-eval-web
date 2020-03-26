@@ -7,7 +7,7 @@ export default ({ headline='Select Question', data, onChange, ...props }) => {
   useEffect(() => { onChange && onChange(selected)}, [selected])
   return (
     <Question {...{headline, ...props}}>
-      <Dropdown list={data} selectedValue={selected} onChange={(val) => setSelected(val)} />
+      <Dropdown list={data} selectedValue={selected} onChange={(val) => setSelected(val)} searchable />
     </Question>
   )
 }
