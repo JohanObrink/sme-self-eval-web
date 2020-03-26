@@ -5,5 +5,6 @@ import { SuspendedPensionProvisions } from '../../../lib/form/questions'
 describe('form/questions/SuspendedPensionProvisions', () => {
   it('renders', () => {
     const component = renderer.create(<SuspendedPensionProvisions />)
+    expect(component).toBeDefined()
   })
 })
