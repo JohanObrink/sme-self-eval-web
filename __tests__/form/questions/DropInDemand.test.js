@@ -5,5 +5,6 @@ import { DropInDemand } from '../../../lib/form/questions'
 describe('form/questions/DropInDemand', () => {
   it('renders', () => {
     const component = renderer.create(<DropInDemand />)
+    expect(component).toBeDefined()
   })
 })

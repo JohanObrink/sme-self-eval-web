@@ -5,5 +5,6 @@ import { Almi } from '../../../lib/form/questions'
 describe('form/questions/Almi', () => {
   it('renders', () => {
     const component = renderer.create(<Almi />)
+    expect(component).toBeDefined()
   })
 })
