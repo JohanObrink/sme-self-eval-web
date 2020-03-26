@@ -5,5 +5,6 @@ import { ObstructingDecisions } from '../../../lib/form/questions'
 describe('form/questions/ObstructingDecisions', () => {
   it('renders', () => {
     const component = renderer.create(<ObstructingDecisions />)
+    expect(component).toBeDefined()
   })
 })

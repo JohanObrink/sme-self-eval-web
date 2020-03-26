@@ -5,5 +5,6 @@ import { Quarantine } from '../../../lib/form/questions'
 describe('form/questions/Quarantine', () => {
   it('renders', () => {
     const component = renderer.create(<Quarantine />)
+    expect(component).toBeDefined()
   })
 })

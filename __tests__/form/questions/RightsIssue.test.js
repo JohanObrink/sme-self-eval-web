@@ -5,5 +5,6 @@ import { RightsIssue } from '../../../lib/form/questions'
 describe('form/questions/RightsIssue', () => {
   it('renders', () => {
     const component = renderer.create(<RightsIssue />)
+    expect(component).toBeDefined()
   })
 })

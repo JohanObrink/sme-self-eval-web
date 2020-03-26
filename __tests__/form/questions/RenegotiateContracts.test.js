@@ -5,5 +5,6 @@ import { RenegotiateContracts } from '../../../lib/form/questions'
 describe('form/questions/RenegotiateContracts', () => {
   it('renders', () => {
     const component = renderer.create(<RenegotiateContracts />)
+    expect(component).toBeDefined()
   })
 })

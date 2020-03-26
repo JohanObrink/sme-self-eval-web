@@ -5,5 +5,6 @@ import { SickLeave } from '../../../lib/form/questions'
 describe('form/questions/SickLeave', () => {
   it('renders', () => {
     const component = renderer.create(<SickLeave />)
+    expect(component).toBeDefined()
   })
 })

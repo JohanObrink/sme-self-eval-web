@@ -5,5 +5,6 @@ import { CurrentFunds } from '../../../lib/form/questions'
 describe('form/questions/CurrentFunds', () => {
   it('renders', () => {
     const component = renderer.create(<CurrentFunds />)
+    expect(component).toBeDefined()
   })
 })

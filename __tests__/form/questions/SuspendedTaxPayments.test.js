@@ -5,5 +5,6 @@ import { SuspendedTaxPayments } from '../../../lib/form/questions'
 describe('form/questions/SuspendedTaxPayments', () => {
   it('renders', () => {
     const component = renderer.create(<SuspendedTaxPayments />)
+    expect(component).toBeDefined()
   })
 })
