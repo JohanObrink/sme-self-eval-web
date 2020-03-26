@@ -4,5 +4,8 @@
   "extends": [
     "standard-react",
     "plugin:jest/recommended"
-  ]
+  ],
+  "rules": {
+    "react/prop-types": 0
+  }
 }
