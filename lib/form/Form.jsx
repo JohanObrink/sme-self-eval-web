@@ -1,23 +1,20 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Button } from '@sebgroup/react-components/dist/Button/Button'
-import { actions } from './constants'
 import FormStep from './FormStep'
 import FormContext from './FormContext'
 
-const Form = () => {
-  const { state, dispatch } = useContext(FormContext)
-  const [currentStep, setCurrentStep] = useState(<></>)
-  const [navState, setNavState] = useState({ prev: false, next: false })
+const getNavState = (stepIndex, steps) => ({
+  prev: stepIndex > 0,
+  next: stepIndex < steps.length - 1
+})
 
+const Form = ({ form, stepIndex }) => {
+  const [navState, setNavState] = useState(getNavState(stepIndex, form.steps))
+  const [currentStep, setCurrentStep] = useState(form.steps[stepIndex])
   useEffect(() => {
-    const { steps, currentStepIndex } = state
-    const newStep = steps[currentStepIndex]
-    setCurrentStep(newStep)
-    setNavState({
-      prev: currentStepIndex > 0,
-      next: currentStepIndex < steps.length - 1
-    })
-  }, [state.currentStepIndex])
+    setNavState(getNavState(stepIndex, form.steps))
+    setCurrentStep(form.steps[stepIndex])
+  }, [stepIndex])
 
   return (
     <>
@@ -27,6 +24,7 @@ const Form = () => {
         <div className='col-auto prev-next-buttons'>
           {navState.prev && <Button theme='secondary' onClick={() => dispatch({ type: actions.PREVIOUS })}>Tidigare</Button>}
           {navState.next && <Button theme='primary' onClick={() => dispatch({ type: actions.NEXT })}>Nästa</Button>}
+          {!navState.next && <Button theme='primary' onClick={() => dispatch({ type: actions.FINISH })}>Slutför</Button>}
         </div>
       </div>
     </>
