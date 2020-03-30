@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import Question from './Question'
-import { TextBox } from '@sebgroup/react-components/dist/TextBox/TextBox'
+import { Dropdown } from '@sebgroup/react-components/dist/Dropdown/Dropdown'
 
 export default (props) => {
-  const { inputType, value, onChange } = props
+  const { value, seed, onChange } = props
   const [val, setVal] = useState(value)
+  const data = seed()
+
   useEffect(() => { onChange && onChange(val)}, [val])
   return (
     <Question {...props}>
-      <TextBox type={inputType} value={val} onChange={(event) => setVal(event.target.value)} />
+      <Dropdown list={data} selectedValue={val} onChange={(newVal) => setVal(newVal)} searchable />
     </Question>
   )
 }

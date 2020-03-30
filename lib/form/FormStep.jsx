@@ -1,17 +1,30 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React from 'react'
 import { questionTypes } from './data'
-import { SelectQuestion, YesNoQuestion } from '../components'
+import {
+  ButtonGroupQuestion,
+  DropDownQuestion,
+  InputQuestion,
+  YesNoQuestion
+} from '../components'
 
 const novalidation = () => true
 
 const renderQuestion = ({ question, type, path, seed, validate = novalidation }) => {
+  const onChange = () => {}
+  const props = {
+    question,
+    seed,
+    onChange
+  }
   switch (type) {
     case questionTypes.BUTTON_GROUP:
-      return <div key={path}>Button Group [{question}]</div>
+      return <ButtonGroupQuestion key={path} {...props} />
     case questionTypes.DROP_DOWN:
-      return <div key={path}>Dropdown [{question}]</div>
+      return <DropDownQuestion key={path} {...props} />
+    case questionTypes.INPUT:
+      return <InputQuestion key={path} {...props} />
     case questionTypes.YES_NO:
-      return <div key={path}>Yes/No [{question}]</div>
+      return <YesNoQuestion key={path} {...props} />
     default:
       throw new Error('Unknown question type')
   }
@@ -23,7 +36,7 @@ export default ({ headline, title, questions = [] }) => {
       <div className='row'>
         <div className='col'>
           <h6>{title}</h6>
-          <h3>{headline}</h3>
+          <h2>{headline}</h2>
         </div>
       </div>
       <section role='questions'>
