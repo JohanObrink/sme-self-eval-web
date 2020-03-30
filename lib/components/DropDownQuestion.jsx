@@ -10,7 +10,13 @@ export default (props) => {
   useEffect(() => { onChange && onChange(val)}, [val])
   return (
     <Question {...props}>
-      <Dropdown list={data} selectedValue={val} onChange={(newVal) => setVal(newVal)} searchable />
+      <Dropdown
+        placeholder="Välj ..."
+        searchPlaceholder="Sök ..."
+        list={data}
+        selectedValue={val}
+        onChange={(newVal) => setVal(newVal)}
+        searchable />
     </Question>
   )
 }
