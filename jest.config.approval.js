@@ -5,11 +5,11 @@ module.exports = {
   collectCoverage: true,
   coverageThreshold: {
     global: {},
-    './lib/form/questions/*.jsx': {
+    /*'./lib/form/questions/*.jsx': {
       branches: 25,
       functions: 80,
       lines: 60,
       statements: -10
-    }
+    }*/
   }
 }

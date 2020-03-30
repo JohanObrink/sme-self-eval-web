@@ -21,7 +21,7 @@
     "lint": "eslint ./lib/**/*.js* --fix",
     "lint:watch": "esw ./lib/**/*.js* --watch --fix --color",
     "test": "jest --config jest.config.approval.js",
-    "test:watch": "jest --watchAll",
+    "test:watch": "jest --config jest.config.js --watchAll",
     "lintAndTest": "npm run lint && npm test"
   },
   "bugs": {
@@ -42,6 +42,8 @@
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@semantic-release/changelog": "^5.0.0",
+    "@testing-library/jest-dom": "^5.3.0",
+    "@testing-library/react": "^10.0.1",
     "@types/jest": "^25.1.4",
     "@types/react": "^16.9.25",
     "@types/react-dom": "^16.9.5",
@@ -60,10 +62,15 @@
     "parcel-bundler": "^1.12.4",
     "prettier": "^2.0.2",
     "prettier-config-standard": "^1.0.1",
-    "react-test-renderer": "^16.13.1",
+    "regenerator-runtime": "^0.13.5",
     "sass": "^1.26.3",
     "semantic-release": "^17.0.4",
     "typescript": "^3.8.3"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./setupTests.js"
+    ]
   },
   "sass": {
     "includePaths": [
