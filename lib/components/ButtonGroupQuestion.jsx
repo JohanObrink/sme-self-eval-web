@@ -13,10 +13,11 @@ export default (props) => {
     list.forEach(({label, value}, index) => {
       children.push(
         <Button
+          key={escape(value)}
           label={label}
           value={value}
           theme={(val === value) ? 'primary' : 'secondary'}
-          onChange={(newVal) => setVal(newVal)}
+          onClick={() => setVal(value)}
         />
       )
       if (index & perRow === 0) {
