@@ -3,7 +3,6 @@ import { reducer } from './form/formReducer'
 import Form from './form/Form'
 import { form } from './form/data'
 import { ProgressBar } from '@sebgroup/react-components/dist/ProgressBar/ProgressBar'
-import api from './api'
 
 export default () => {
   const [state, dispatch] = useReducer(reducer, { form, data: {}, currentStepIndex: 0 })
