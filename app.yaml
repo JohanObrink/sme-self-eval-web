@@ -11,6 +11,9 @@ handlers:
   upload: dist/(.*\.(js))
   mime_type: application/javascript; charset=UTF-8
 
-- url: /(.*)
+- url: /(.*\..*)
   static_files: dist/\1
   upload: dist/(.*)
+
+- url: /(.*)
+  static_files: dist/index.html
