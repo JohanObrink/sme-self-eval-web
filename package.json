@@ -16,7 +16,7 @@
     "url": "git+https://github.com/JohanObrink/sme-self-eval-web.git"
   },
   "scripts": {
-    "prestart": "node ./dev/localApi &",
+    "prestart": "STORE=memory node ./dev/localApi &",
     "start": "API_HOST=http://localhost:1337 parcel index.html --no-source-maps",
     "build": "parcel build index.html --no-source-maps",
     "lint": "eslint ./lib/**/*.js* --fix",
