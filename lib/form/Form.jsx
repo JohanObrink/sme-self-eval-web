@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory } from "react-router-dom";
 import { Button } from '@sebgroup/react-components/dist/Button/Button'
 import FormStep from './FormStep'
 import { actions } from './constants'
@@ -16,11 +17,15 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
     setNavState(getNavState(stepIndex, form.steps))
     setCurrentStep(form.steps[stepIndex])
   }, [stepIndex])
+  
+  //let history = useHistory();
 
   const save = async () => {
     const { id } = await api.create(data);
-    console.log(id)
     dispatch({ type: actions.FINISH, payload: id });
+
+    //history.push(`/report/${id}`);
+    //history.goForward(); // enable this to automatically go forward to the /report/:id
   };
 
   return (
