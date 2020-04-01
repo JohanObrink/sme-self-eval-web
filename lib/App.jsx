@@ -7,8 +7,8 @@ export default () => {
   return (
     <Router>
       <Switch>
-        <Route path="/" exact component={UserView}></Route>
-        <Route path="/report/:reportId?" exact component={ReportView}></Route>
+        <Route path='/' exact component={UserView} />
+        <Route path='/report/:reportId?' exact component={ReportView} />
       </Switch>
     </Router>
   )

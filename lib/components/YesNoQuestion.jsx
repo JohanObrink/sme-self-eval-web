@@ -5,7 +5,7 @@ import { RadioButton } from '@sebgroup/react-components/dist/RadioButton/RadioBu
 export default (props) => {
   const { value, onChange } = props
   const [val, setVal] = useState(value)
-  
+
   useEffect(() => { onChange && onChange(val) }, [val])
   return (
     <Question {...props}>
