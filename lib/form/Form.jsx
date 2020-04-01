@@ -8,7 +8,7 @@ const getNavState = (stepIndex, steps) => ({
   next: stepIndex < steps.length - 1
 })
 
-const Form = ({ form, stepIndex, dispatch }) => {
+const Form = ({ form, stepIndex, dispatch, data }) => {
   const [navState, setNavState] = useState(getNavState(stepIndex, form.steps))
   const [currentStep, setCurrentStep] = useState(form.steps[stepIndex])
   useEffect(() => {
@@ -18,7 +18,7 @@ const Form = ({ form, stepIndex, dispatch }) => {
 
   return (
     <>
-      <FormStep {...currentStep} dispatch={dispatch} />
+      <FormStep {...currentStep} dispatch={dispatch} data={data} />
       <hr />
       <div className='row justify-content-end'>
         <div className='col-auto prev-next-buttons'>

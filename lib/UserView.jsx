@@ -13,7 +13,7 @@ export default () => {
       />
       <div className='container'>
         <h1>Titel på verktyget</h1>
-        <Form form={form} stepIndex={state.currentStepIndex} dispatch={dispatch} />
+        <Form form={form} data={state.data} stepIndex={state.currentStepIndex} dispatch={dispatch} />
       </div>
     </>
   )

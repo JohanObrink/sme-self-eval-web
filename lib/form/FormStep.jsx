@@ -7,11 +7,15 @@ import {
   YesNoQuestion
 } from '../components'
 
+import { actions } from './constants'
+
+
 const novalidation = () => true
 
-const renderQuestion = ({ question, type, path, seed, validate = novalidation }) => {
-  const onChange = () => {}
+const renderQuestion = ({ question, type, path, seed, validate = novalidation, dispatch, data }) => {
+  const onChange = (value) => { validate(value) && dispatch({ type: actions.ANSWER, payload: { path, value } }) }
   const props = {
+    value: data[path],
     question,
     seed,
     onChange
@@ -30,7 +34,7 @@ const renderQuestion = ({ question, type, path, seed, validate = novalidation })
   }
 }
 
-export default ({ headline, title, questions = [] }) => {
+export default ({ headline, title, questions = [], dispatch, data }) => {
   return (
     <>
       <div className='row'>
@@ -40,7 +44,7 @@ export default ({ headline, title, questions = [] }) => {
         </div>
       </div>
       <section role='questions'>
-        {questions.map(q => renderQuestion(q))}
+        {questions.map(q => renderQuestion({...q, dispatch, data}))}
       </section>
     </>
   )
