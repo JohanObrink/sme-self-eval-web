@@ -10,8 +10,8 @@ export default (props) => {
   return (
     <Question {...props}>
       <div className='form-check form-check-inline'>
-        <RadioButton group='group' label='Ja' radioValue='ja' value={val} onChange={(value) => setVal(value)} />
-        <RadioButton group='group' label='Nej' radioValue='nej' value={val} onChange={(value) => setVal(value)} />
+        <RadioButton key="yes" group='group' label='Ja' radioValue='ja' value={val} onChange={(value) => setVal(value)} />
+        <RadioButton key="no" group='group' label='Nej' radioValue='nej' value={val} onChange={(value) => setVal(value)} />
       </div>
     </Question>
   )
