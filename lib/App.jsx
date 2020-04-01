@@ -1,20 +1,15 @@
-import React, { useReducer } from 'react'
-import { reducer } from './form/formReducer'
-import Form from './form/Form'
-import { form } from './form/data'
-import { ProgressBar } from '@sebgroup/react-components/dist/ProgressBar/ProgressBar'
+import React from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import UserView from './UserView'
+import ReportView from './ReportView'
 
 export default () => {
-  const [state, dispatch] = useReducer(reducer, { form, data: {}, currentStepIndex: 0 })
   return (
-    <>
-      <ProgressBar
-        value={(state.currentStepIndex / (form.steps.length - 1)) * 100}
-      />
-      <div className='container'>
-        <h1>Titel på verktyget</h1>
-        <Form form={form} stepIndex={state.currentStepIndex} dispatch={dispatch} />
-      </div>
-    </>
+    <Router>
+      <Switch>
+        <Route path='/' exact component={UserView} />
+        <Route path='/report/:reportId?' exact component={ReportView} />
+      </Switch>
+    </Router>
   )
 }

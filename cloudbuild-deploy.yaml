@@ -5,6 +5,8 @@ steps:
 - name: node:10.19.0
   entrypoint: npm
   args: ['run', 'build']
+  env:
+  - API_HOST=$_API_HOST
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['app', 'deploy']
 timeout: "1600s"
