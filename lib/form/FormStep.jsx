@@ -17,6 +17,7 @@ const renderQuestion = ({ question, type, path, seed, validate = novalidation, d
   const props = {
     value: data[path],
     question,
+    path,
     seed,
     onChange
   }
