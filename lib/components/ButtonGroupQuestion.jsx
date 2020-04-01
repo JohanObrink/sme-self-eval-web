@@ -10,13 +10,12 @@ export default (props) => {
 
   const getButtons = (list) => {
     const children = []
-    list.forEach(({label, value}, index) => {
+    list.forEach(({ label, value }, index) => {
       children.push(
         <Button
           label={label}
-          value={value}
           theme={(val === value) ? 'primary' : 'secondary'}
-          onChange={(newVal) => setVal(newVal)}
+          onClick={(event) => setVal(value)}
         />
       )
       if (index & perRow === 0) {
@@ -25,7 +24,7 @@ export default (props) => {
     })
     return children
   }
-  
+
   useEffect(() => { onChange && onChange(val) }, [val])
   return (
     <Question {...props}>
