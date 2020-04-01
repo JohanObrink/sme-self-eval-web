@@ -12,7 +12,7 @@ export default () => {
         value={(state.currentStepIndex / (form.steps.length - 1)) * 100}
       />
       <div className='container'>
-        <h1>Självtest</h1>
+        <h1>Testa din verksamhet</h1>
         <Form form={form} data={state.data} stepIndex={state.currentStepIndex} dispatch={dispatch} />
       </div>
     </>
