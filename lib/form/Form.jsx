@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Button } from '@sebgroup/react-components/dist/Button/Button'
 import FormStep from './FormStep'
 import { actions } from './constants'
+import * as api from '../api'
 
 const getNavState = (stepIndex, steps) => ({
   prev: stepIndex > 0,
@@ -16,6 +17,12 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
     setCurrentStep(form.steps[stepIndex])
   }, [stepIndex])
 
+  const save = async () => {
+    const { id } = await api.create(data);
+    console.log(id)
+    dispatch({ type: actions.FINISH, payload: id });
+  };
+
   return (
     <>
       <FormStep {...currentStep} dispatch={dispatch} data={data} />
@@ -24,7 +31,7 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
         <div className='col-auto prev-next-buttons'>
           {navState.prev && <Button theme='secondary' onClick={() => dispatch({ type: actions.PREVIOUS })}>Tidigare</Button>}
           {navState.next && <Button theme='primary' onClick={() => dispatch({ type: actions.NEXT })}>Nästa</Button>}
-          {!navState.next && <Button theme='primary' onClick={() => dispatch({ type: actions.FINISH })}>Slutför</Button>}
+          {!navState.next && <Button theme='primary' onClick={() => save()}>Slutför</Button>}
         </div>
       </div>
     </>
