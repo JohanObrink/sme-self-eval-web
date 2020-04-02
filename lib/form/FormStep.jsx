@@ -4,7 +4,8 @@ import {
   ButtonGroupQuestion,
   DropDownQuestion,
   InputQuestion,
-  YesNoQuestion
+  YesNoQuestion,
+  YesNoNaQuestion
 } from '../components'
 
 import { actions } from './constants'
@@ -29,6 +30,8 @@ const renderQuestion = ({ question, type, path, seed, validate = novalidation, d
       return <InputQuestion key={path} {...props} />
     case questionTypes.YES_NO:
       return <YesNoQuestion key={path} {...props} />
+    case questionTypes.YES_NO_NA:
+      return <YesNoNaQuestion key={path} {...props} />
     default:
       throw new Error('Unknown question type')
   }
