@@ -1,5 +1,6 @@
 import React from 'react'
 import { questionTypes } from './data'
+import { trackEvent } from '../analytics'
 import {
   ButtonGroupQuestion,
   DropDownQuestion,
