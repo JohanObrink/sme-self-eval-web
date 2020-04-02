@@ -1,8 +1,18 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
 import { Button } from '@sebgroup/react-components/dist/Button/Button'
+import { TextBox } from '@sebgroup/react-components/dist/TextBox/TextBox'
 
 export default () => {
+  let history = useHistory()
+  const [reportId, setReportId] = useState("")
+
+  const goToReport = () => {
+    if(reportId !== "") {
+      history.push(`/report/${reportId}`); history.goForward();
+    }
+  }
+
   return (
     <div className='container'>
       <div className='row'>
@@ -38,6 +48,20 @@ export default () => {
           <Link to='/test'>
             <Button theme='primary'>Starta</Button>
           </Link>
+        </div>
+      </div>
+      <div className='row previous-test'>
+        <div className='col'>
+          <h3>Har du redan gjort testet?</h3>
+        </div>
+      </div>
+      <div className='row'>
+        <div className='col'>
+          <TextBox type='text' value={reportId} placeholder='Din kod' onChange={(event) => setReportId(event.target.value)} />
+          <Button onClick={() => { goToReport() }}>Hämta checklista</Button>
+        </div>
+        <div className='col'>
+          <p>Fyll i din kod för att se din checklista.</p>
         </div>
       </div>
     </div>

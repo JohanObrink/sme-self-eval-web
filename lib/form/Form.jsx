@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
+import { trackPage } from '../analytics'
 import { Button } from '@sebgroup/react-components/dist/Button/Button'
 import FormStep from './FormStep'
 import { actions } from './constants'
@@ -11,18 +12,23 @@ const getNavState = (stepIndex, steps) => ({
 })
 
 const Form = ({ form, stepIndex, dispatch, data }) => {
+  const { pathname } = useLocation()
+
   let history = useHistory();
+  const [buttonIsLoading, setButtonIsLoading] = useState(false)
   const [navState, setNavState] = useState(getNavState(stepIndex, form.steps))
   const [currentStep, setCurrentStep] = useState(form.steps[stepIndex])
   useEffect(() => {
     setNavState(getNavState(stepIndex, form.steps))
     setCurrentStep(form.steps[stepIndex])
+    if (stepIndex) {
+      trackPage(`${pathname}/${stepIndex}`)
+    }
   }, [stepIndex])
 
   const save = async () => {
-    const { id } = await api.create(data);
-    console.log(id)
-    dispatch({ type: actions.FINISH, payload: id });
+    const { id } = await api.create(data)
+    dispatch({ type: actions.FINISH, payload: id })
 
     history.push(`/report/${id}`)
     history.goForward()
@@ -36,7 +42,7 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
         <div className='col-auto prev-next-buttons'>
           {navState.prev && <Button theme='secondary' onClick={() => dispatch({ type: actions.PREVIOUS })}>Tidigare</Button>}
           {navState.next && <Button theme='primary' onClick={() => dispatch({ type: actions.NEXT })}>Nästa</Button>}
-          {!navState.next && <Button theme='primary' onClick={() => save()}>Slutför</Button>}
+          {!navState.next && <Button theme='primary' onClick={() => {save(); setButtonIsLoading(true)}} disabled={buttonIsLoading}>Slutför</Button>}
         </div>
       </div>
     </>
