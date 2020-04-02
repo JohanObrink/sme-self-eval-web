@@ -16,8 +16,9 @@
     "url": "git+https://github.com/JohanObrink/sme-self-eval-web.git"
   },
   "scripts": {
-    "prestart": "STORE=memory node ./dev/localApi &",
-    "start": "API_HOST=http://localhost:1337 parcel index.html --no-source-maps",
+    "start:api": "cross-env STORE=memory node ./dev/localApi",
+    "start:web": "cross-env API_HOST=http://localhost:1337 parcel index.html --no-source-maps",
+    "start": "concurrently \"npm:start:api\" \"npm:start:web\"",
     "build": "parcel build index.html --no-source-maps",
     "lint": "eslint ./lib/**/*.js* --fix",
     "lint:watch": "esw ./lib/**/*.js* --watch --fix --color",
@@ -51,6 +52,8 @@
     "@types/react": "^16.9.25",
     "@types/react-dom": "^16.9.5",
     "babel-eslint": "^10.1.0",
+    "concurrently": "^5.1.0",
+    "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
     "eslint-config-standard-react": "^9.2.0",
     "eslint-plugin-import": "^2.20.1",
