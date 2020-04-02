@@ -12,21 +12,23 @@ const getNavState = (stepIndex, steps) => ({
 })
 
 const Form = ({ form, stepIndex, dispatch, data }) => {
+  const { pathname } = useLocation()
+
   let history = useHistory();
   const [buttonIsLoading, setButtonIsLoading] = useState(false)
-  const { path } = useLocation()
   const [navState, setNavState] = useState(getNavState(stepIndex, form.steps))
   const [currentStep, setCurrentStep] = useState(form.steps[stepIndex])
   useEffect(() => {
     setNavState(getNavState(stepIndex, form.steps))
     setCurrentStep(form.steps[stepIndex])
-    trackPage(`${path}/${stepIndex}`)
+    if (stepIndex) {
+      trackPage(`${pathname}/${stepIndex}`)
+    }
   }, [stepIndex])
 
   const save = async () => {
-    const { id } = await api.create(data);
-    console.log(id)
-    dispatch({ type: actions.FINISH, payload: id });
+    const { id } = await api.create(data)
+    dispatch({ type: actions.FINISH, payload: id })
 
     history.push(`/report/${id}`)
     history.goForward()
