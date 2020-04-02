@@ -11,7 +11,8 @@ const getNavState = (stepIndex, steps) => ({
 })
 
 const Form = ({ form, stepIndex, dispatch, data }) => {
-  let history = useHistory();
+  let history = useHistory()
+  const [buttonIsLoading, setButtonIsLoading] = useState(false)
   const [navState, setNavState] = useState(getNavState(stepIndex, form.steps))
   const [currentStep, setCurrentStep] = useState(form.steps[stepIndex])
   useEffect(() => {
@@ -20,23 +21,49 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
   }, [stepIndex])
 
   const save = async () => {
-    const { id } = await api.create(data);
+    const { id } = await api.create(data)
     console.log(id)
-    dispatch({ type: actions.FINISH, payload: id });
+    dispatch({ type: actions.FINISH, payload: id })
 
     history.push(`/report/${id}`)
     history.goForward()
-  };
+  }
 
   return (
     <>
+      <div>asda</div>
       <FormStep {...currentStep} dispatch={dispatch} data={data} />
       <hr />
       <div className='row justify-content-end'>
         <div className='col-auto prev-next-buttons'>
-          {navState.prev && <Button theme='secondary' onClick={() => dispatch({ type: actions.PREVIOUS })}>Tidigare</Button>}
-          {navState.next && <Button theme='primary' onClick={() => dispatch({ type: actions.NEXT })}>Nästa</Button>}
-          {!navState.next && <Button theme='primary' onClick={() => save()}>Slutför</Button>}
+          {navState.prev && (
+            <Button
+              theme='secondary'
+              onClick={() => dispatch({ type: actions.PREVIOUS })}
+            >
+              Tidigare
+            </Button>
+          )}
+          {navState.next && (
+            <Button
+              theme='primary'
+              onClick={() => dispatch({ type: actions.NEXT })}
+            >
+              Nästa
+            </Button>
+          )}
+          {!navState.next && (
+            <Button
+              theme='primary'
+              onClick={() => {
+                save()
+                setButtonIsLoading(true)
+              }}
+              disabled={buttonIsLoading}
+            >
+              Slutför
+            </Button>
+          )}
         </div>
       </div>
     </>
