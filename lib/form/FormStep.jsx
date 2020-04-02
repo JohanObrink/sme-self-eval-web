@@ -1,5 +1,6 @@
 import React from 'react'
 import { questionTypes } from './data'
+import { trackEvent } from '../analytics'
 import {
   ButtonGroupQuestion,
   DropDownQuestion,
@@ -13,7 +14,12 @@ import { actions } from './constants'
 const novalidation = () => true
 
 const renderQuestion = ({ question, type, path, seed, validate = novalidation, dispatch, data }) => {
-  const onChange = (value) => { validate(value) && dispatch({ type: actions.ANSWER, payload: { path, value } }) }
+  const onChange = (value) => {
+    if (validate(value) && value !== data[path]) {
+      trackEvent('test', 'answer', path)
+      dispatch({ type: actions.ANSWER, payload: { path, value } })
+    }
+  }
   const props = {
     value: data[path],
     question,
