@@ -9,7 +9,6 @@ h1 {
 }
 
 .prev-next-buttons {
-    
     margin-bottom: 2rem;
 
     Button {
@@ -19,4 +18,33 @@ h1 {
 
 .row {
     margin-top: 1rem;
+}
+
+.form-check-inline button:not(:first-child) {
+    margin-left: 16px;
+}
+
+.custom-dropdown > .custom-dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba($blue-darker, 0.5) !important;
+    border-color: $blue-darker !important;
+}
+
+.form-group.input-box > .input-field > input.form-control:not(:disabled):focus {
+    box-shadow: 0 0 0 0.2rem rgba($blue-darker, 0.5) !important;
+    border-color: $blue-darker !important;
+}
+
+.form-group.custom-radio
+    > .input-field
+    .custom-control
+    > .custom-control-input:focus
+    + label,
+.form-group.custom-radio
+    > .input-field
+    .custom-control
+    > .custom-control-input:active
+    + label {
+    box-shadow: 0 0 0 0.2rem rgba($blue-darker, 0.5) !important;
+    border-color: $blue-darker !important;
+    border-radius: 0.25rem;
 }

@@ -14,6 +14,7 @@ export default (props) => {
       children.push(
         <Button
           label={label}
+          key={index}
           theme={(val === value) ? 'primary' : 'secondary'}
           onClick={(event) => setVal(value)}
         />
