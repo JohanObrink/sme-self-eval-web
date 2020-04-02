@@ -1,5 +1,11 @@
 runtime: nodejs12
 handlers:
+- url: /([\w-\/]+)$
+  static_files: dist/index.html
+  upload: dist/index.html
+  mime_type: text/html; charset=UTF-8
+  expiration: 1m
+
 - url: /(.*\.(js))
   static_files: dist/\1
   upload: dist/(.*\.(js))
@@ -8,9 +14,3 @@ handlers:
 - url: /(.*\..*)
   static_files: dist/\1
   upload: dist/(.*)
-
-- url: /(.*)
-  static_files: dist/index.html
-  upload: dist/index.html
-  mime_type: text/html; charset=UTF-8
-  expiration: 1m
