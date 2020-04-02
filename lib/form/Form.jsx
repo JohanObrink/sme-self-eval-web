@@ -12,6 +12,7 @@ const getNavState = (stepIndex, steps) => ({
 
 const Form = ({ form, stepIndex, dispatch, data }) => {
   let history = useHistory();
+  const [buttonIsLoading, setButtonIsLoading] = useState(false)
   const [navState, setNavState] = useState(getNavState(stepIndex, form.steps))
   const [currentStep, setCurrentStep] = useState(form.steps[stepIndex])
   useEffect(() => {
@@ -36,7 +37,7 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
         <div className='col-auto prev-next-buttons'>
           {navState.prev && <Button theme='secondary' onClick={() => dispatch({ type: actions.PREVIOUS })}>Tidigare</Button>}
           {navState.next && <Button theme='primary' onClick={() => dispatch({ type: actions.NEXT })}>Nästa</Button>}
-          {!navState.next && <Button theme='primary' onClick={() => save()}>Slutför</Button>}
+          {!navState.next && <Button theme='primary' onClick={() => {save(); setButtonIsLoading(true)}} disabled={buttonIsLoading}>Slutför</Button>}
         </div>
       </div>
     </>
