@@ -6,7 +6,7 @@ import Report from './report/Report';
 export default () => {
   const { reportId } = useParams();
   return (
-    <div class="container">
+    <div className="container">
       <h1>Checklista – förslag på åtgärder</h1>
       <p>
         Här ser du våra förslag på åtgärder och vart du kan vända dig för att få
@@ -20,7 +20,7 @@ export default () => {
         <a
           href="https://seb.se/var-kundservice/contact/c1119-kundservice-foeretag"
           target="blank"
-          class="external"
+          className="external"
         >
           kontakta oss
         </a>
