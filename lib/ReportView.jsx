@@ -8,8 +8,8 @@ export default () => {
   return (
     <div>
       <h1>Report</h1>
-      { reportId && <Report reportId={reportId} /> }
-      { !reportId && <LoadReport /> }
+      {reportId && <Report reportId={reportId} />}
+      {!reportId && <LoadReport />}
     </div>
   )
 }

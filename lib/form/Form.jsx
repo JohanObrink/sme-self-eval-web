@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import { Button } from '@sebgroup/react-components/dist/Button/Button'
 import FormStep from './FormStep'
 import { actions } from './constants'
@@ -10,6 +11,7 @@ const getNavState = (stepIndex, steps) => ({
 })
 
 const Form = ({ form, stepIndex, dispatch, data }) => {
+  let history = useHistory();
   const [navState, setNavState] = useState(getNavState(stepIndex, form.steps))
   const [currentStep, setCurrentStep] = useState(form.steps[stepIndex])
   useEffect(() => {
@@ -21,6 +23,9 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
     const { id } = await api.create(data);
     console.log(id)
     dispatch({ type: actions.FINISH, payload: id });
+
+    history.push(`/report/${id}`)
+    history.goForward()
   };
 
   return (
