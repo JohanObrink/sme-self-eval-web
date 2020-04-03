@@ -35,7 +35,7 @@ export default () => {
             <a
               href='https://seb.se/juridik-och-sakerhet/sebs-integritetspolicy'
               target='blank'
-              class='external'
+              className='external'
             >
               vår integritetspolicy
             </a>
