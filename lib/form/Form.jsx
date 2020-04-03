@@ -22,7 +22,7 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
     setNavState(getNavState(stepIndex, form.steps))
     setCurrentStep(form.steps[stepIndex])
     if (stepIndex) {
-      trackPage(`${pathname}/${stepIndex}`)
+      trackPage(`${pathname}/${stepIndex + 1}`)
     }
   }, [stepIndex])
 
