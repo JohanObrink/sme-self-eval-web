@@ -23,6 +23,29 @@ h1 {
     }
 }
 
+.report-explanation {
+    background-color: #F6F6F6;
+    > :last-child {
+        .row {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.report-table {
+    padding-left: 0;
+    padding-right: 0;
+    th {
+        background-color: #F6F6F6;
+        font-size: 0.875rem;
+        font-weight: 500;
+        border: 0rem;
+    }
+    td {
+        border-top: 0;
+        border-bottom: 1px solid #c6c6c6;
+    }
+}
 
 .prev-next-buttons {
 
