@@ -58,11 +58,19 @@ export default () => {
       </div>
       <div className='row'>
         <div className='col'>
-          <TextBox type='text' value={reportId} placeholder='Din kod' onChange={(event) => setReportId(event.target.value)} />
-          <Button onClick={() => { goToReport() }}>Hämta checklista</Button>
-        </div>
-        <div className='col'>
-          <p>Fyll i din kod för att se din checklista.</p>
+          <div className='row align-items-center'>
+            <div className='col-6 col-sm-4 col-md-3 col-lg-2'>
+              <TextBox type='text' value={reportId} placeholder='' maxLength='10' onChange={(event) => setReportId(event.target.value)} />
+            </div>
+            <div className='col'>
+              <p>Fyll i din kod för att se din checklista.</p>
+            </div>
+          </div>
+          <div className='row'>
+            <div className='col'>
+              <Button onClick={() => { goToReport() }}>Hämta checklista</Button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
