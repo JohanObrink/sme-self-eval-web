@@ -19,14 +19,15 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
   const [navState, setNavState] = useState(getNavState(stepIndex, form.steps))
   const [currentStep, setCurrentStep] = useState(form.steps[stepIndex])
   useEffect(() => {
+    if (stepIndex === 0) {
+      toolStarted()
+    }
     setNavState(getNavState(stepIndex, form.steps))
     setCurrentStep(form.steps[stepIndex])
     if (stepIndex) {
       trackPage(`${pathname}/${stepIndex + 1}`)
     }
   }, [stepIndex])
-
-  toolStarted()
 
   const save = async () => {
     toolCompleted()
