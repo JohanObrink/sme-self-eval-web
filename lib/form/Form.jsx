@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
-import { trackPage } from '../analytics'
+import { trackPage, toolStarted, toolCompleted } from '../analytics'
 import { Button } from '@sebgroup/react-components/dist/Button/Button'
 import FormStep from './FormStep'
 import { actions } from './constants'
@@ -19,6 +19,9 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
   const [navState, setNavState] = useState(getNavState(stepIndex, form.steps))
   const [currentStep, setCurrentStep] = useState(form.steps[stepIndex])
   useEffect(() => {
+    if (stepIndex === 0) {
+      toolStarted()
+    }
     setNavState(getNavState(stepIndex, form.steps))
     setCurrentStep(form.steps[stepIndex])
     if (stepIndex) {
@@ -27,6 +30,7 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
   }, [stepIndex])
 
   const save = async () => {
+    toolCompleted()
     const { id } = await api.create(data)
     dispatch({ type: actions.FINISH, payload: id })
 
