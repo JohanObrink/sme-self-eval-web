@@ -6,18 +6,22 @@ handlers:
   upload: dist/index.html
   mime_type: text/html; charset=UTF-8
   expiration: 1m
+  secure: always
 
 - url: /(.*\.(js))
   static_files: dist/\1
   upload: dist/(.*\.(js))
   mime_type: application/javascript; charset=UTF-8
+  secure: always
 
 - url: /(.*\..*)
   static_files: dist/\1
   upload: dist/(.*)
+  secure: always
 
 - url: /(.*)
   static_files: dist/index.html
   upload: dist/index.html
   mime_type: text/html; charset=UTF-8
   expiration: 1m
+  secure: always
