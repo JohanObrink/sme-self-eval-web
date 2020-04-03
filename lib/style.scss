@@ -8,6 +8,22 @@ h1 {
     margin-bottom: 1.5rem;
 }
 
+.report-header {
+    > :last-child {
+        background-color: black;
+        color: white;
+        h1, h2, h3, h4 {
+            color: white;
+            font-weight: 400;
+        }
+        .row {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+
 .prev-next-buttons {
 
     Button {
