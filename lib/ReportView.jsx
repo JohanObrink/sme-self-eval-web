@@ -65,13 +65,8 @@ export default () => {
             <div className='col'>
               <p>
                 Bokmärk den här sidan eller kom tillbaka till den med hjälp av
-                din kod:{' '}
+                din kod.
               </p>
-            </div>
-          </div>
-          <div className='row'>
-            <div className='col'>
-              Spara som bokmärke <FontAwesomeIcon icon={faBookmark} />
             </div>
           </div>
         </div>

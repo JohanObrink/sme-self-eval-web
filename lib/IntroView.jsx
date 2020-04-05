@@ -42,9 +42,8 @@ export default () => {
               target='blank'
               className='external'
             >
-              vår integritetspolicy
+              vår integritetspolicy.
             </a>
-            .
           </p>
           <p>Senast uppdaterad 4 april 2020.</p>
         </div>
