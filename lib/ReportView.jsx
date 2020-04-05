@@ -48,7 +48,6 @@ export default () => {
             <a href='https://seb.se/om-seb/coronautbrottet-tips-och-rad-till-dig-som-foretagare' target='blank' className='external'>
               Mer om coronautbrottet på seb.se
             </a>
-            .
           </p>
         </div>
         <div className='col-sm-12 col-md-6'>
@@ -66,13 +65,8 @@ export default () => {
             <div className='col'>
               <p>
                 Bokmärk den här sidan eller kom tillbaka till den med hjälp av
-                din kod:{' '}
+                din kod.
               </p>
-            </div>
-          </div>
-          <div className='row'>
-            <div className='col'>
-              Spara som bokmärke <FontAwesomeIcon icon={faBookmark} />
             </div>
           </div>
         </div>
