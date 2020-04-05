@@ -45,7 +45,7 @@ export default () => {
             </strong>
           </p>
           <p>
-            <a href='' target='blank' className='external'>
+            <a href='https://seb.se/om-seb/coronautbrottet-tips-och-rad-till-dig-som-foretagare?icmp=sebsep_divgeneric_welcam_r1_x' target='blank' className='external'>
               Mer om coronautbrottet på seb.se
             </a>
             .
