@@ -9,10 +9,12 @@ export default () => {
   return (
     <Router>
       <nav className='navbar navbar-light bg-light'>
-        <span className='navbar-brand' href='#'>
-          Självtest
-        </span>
-        <span className='navbar-text'>Testa din verksamhet</span>
+        <a href='https://seb.se/'>
+          <div className='navbar-brand'>Självtest</div>
+        </a>
+        <a href="/">
+          <span className='navbar-text float-left'>Testa din verksamhet</span>
+        </a>
       </nav>
       <PageTracker>
         <Switch>
