@@ -38,15 +38,24 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
     history.goForward()
   };
 
+  const scrollToTop = () => {
+    const c = document.documentElement.scrollTop || document.body.scrollTop;
+    if (c > 0) {
+      window.requestAnimationFrame(scrollToTop);
+      window.scrollTo(0, c - c / 8);
+    }
+  };
+
+
   return (
     <>
       <FormStep {...currentStep} dispatch={dispatch} data={data} />
       <hr />
       <div className='row justify-content-end'>
         <div className='col-auto prev-next-buttons'>
-          {navState.prev && <Button theme='secondary' onClick={() => dispatch({ type: actions.PREVIOUS })}>Tidigare</Button>}
-          {navState.next && <Button theme='primary' onClick={() => dispatch({ type: actions.NEXT })}>Nästa</Button>}
-          {!navState.next && <Button theme='primary' onClick={() => {save(); setButtonIsLoading(true)}} disabled={buttonIsLoading}>Slutför</Button>}
+          {navState.prev && <Button theme='secondary' onClick={() => { scrollToTop(); dispatch({ type: actions.PREVIOUS })}}>Tidigare</Button>}
+          {navState.next && <Button theme='primary' onClick={() => { scrollToTop(); dispatch({ type: actions.NEXT })}}>Nästa</Button>}
+          {!navState.next && <Button theme='primary' onClick={() => { save(); setButtonIsLoading(true)}} disabled={buttonIsLoading}>Slutför</Button>}
         </div>
       </div>
     </>
