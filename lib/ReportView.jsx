@@ -48,7 +48,6 @@ export default () => {
             <a href='' target='blank' className='external'>
               Mer om coronautbrottet på seb.se
             </a>
-            .
           </p>
         </div>
         <div className='col-sm-12 col-md-6'>
