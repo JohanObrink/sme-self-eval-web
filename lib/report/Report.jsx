@@ -46,13 +46,12 @@ export default ({ reportId }) => {
         <th colSpan='2' key={step.headline}>{step.headline}</th>
       </tr>
     )
-    let children = []
     for (let x = 0; x < step.questions.length; x++) {
       var q = step.questions[x]
-      if (report && report[q.path]) {
+      if (report && report.data && report.data[q.path]) {
         rows.push(
           <tr key={q.suggestion}>
-            <td>{iconRender(report[q.path])}</td>
+            <td>{iconRender(report.data[q.path])}</td>
             <td>{q.suggestion}</td>
           </tr>
         )
@@ -74,7 +73,7 @@ export default ({ reportId }) => {
           )}
         </div>
       </div>
-      {report && (
+      {report && report.data && (
         <>
           <div className='row report-explanation'>
             <div className='col'>
