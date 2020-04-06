@@ -1,7 +1,5 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 import LoadReport from './report/LoadReport'
 import Report from './report/Report'
 
@@ -34,9 +32,8 @@ export default () => {
               target='blank'
               className='external'
             >
-              kontakta oss
+              kontakta oss.
             </a>
-            .
           </p>
           <p>
             <strong>
@@ -62,7 +59,7 @@ export default () => {
             </div>
           </div>
           <div className='row'>
-            <div className='col'>
+            <div className='col align-self-end'>
               <p>
                 Bokmärk den här sidan eller kom tillbaka till den med hjälp av
                 din kod.

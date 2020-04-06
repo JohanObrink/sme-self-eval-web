@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck, faTimes, faMinus } from '@fortawesome/free-solid-svg-icons'
 import { get } from '../api'
 import { form } from '../form/data'
+import faCheckSquare from '../assets/check-square.svg'
+import faMinus from '../assets/minus.svg'
+import faPrint from '../assets/print.svg'
+import faSquare from '../assets/square.svg'
 
 export default ({ reportId }) => {
   const [loading, setLoading] = useState()
@@ -19,39 +21,52 @@ export default ({ reportId }) => {
       .finally(() => setLoading(false))
   }, [reportId])
 
-  const rows = []
-
   const iconRender = (value) => {
     switch(value) {
       case "ja":
-        return <FontAwesomeIcon icon={faCheck} />
+        return <img className='icon' src={faCheckSquare} />
         break;
       case "nej":
-        return <FontAwesomeIcon icon={faTimes} />
+        return <img className='icon' src={faSquare} />
         break;
-      case "ignore":
-        return <FontAwesomeIcon icon={faMinus} />
+      case "ignorera":
+        return <img className='icon' src={faMinus} />
         break;
       default:
-        return <FontAwesomeIcon icon={faMinus} />
+        return <img className='icon' src={faMinus} />
         break;
 
     }
   }
 
+  const print = () => {
+    window.print()
+  }
+
+  const rows = []
+
   for (let i = 0; i < form.steps.length; i++) {
     var step = form.steps[i]
-    rows.push(
-      <tr key={i}>
-        <th colSpan='2' key={step.headline}>{step.headline}</th>
-      </tr>
-    )
+    if(step.reportHeadline) {
+      rows.push(
+        <tr key={i}>
+          <th colSpan='2' key={step.reportHeadline}>{step.reportHeadline}</th>
+        </tr>
+      )
+    }
     for (let x = 0; x < step.questions.length; x++) {
       var q = step.questions[x]
       if (report && report.data && report.data[q.path]) {
         rows.push(
           <tr key={q.suggestion}>
             <td>{iconRender(report.data[q.path])}</td>
+            <td>{q.suggestion}</td>
+          </tr>
+        )
+      } else if (report && report.data && !report.data[q.path]) {
+        rows.push(
+          <tr key={q.suggestion}>
+            <td>{iconRender()}</td>
             <td>{q.suggestion}</td>
           </tr>
         )
@@ -79,22 +94,22 @@ export default ({ reportId }) => {
             <div className='col'>
               <div className='row'>
                 <div className='col-4'>
-                  <div>Teckenförklaring</div>
+                  <h3>Teckenförklaring</h3>
                 </div>
               </div>
               <div className='row justify-content-start'>
-                <div className='col-2 col-sm-2 col-md-2'>
+                <div className='col-12 col-sm-auto'>
                   <div>
-                    <FontAwesomeIcon icon={faCheck} /> Ja
+                    <p><img className='icon' src={faCheckSquare} /> Åtgärd klar</p>
                   </div>
                 </div>
-                <div className='col-2 col-sm-2 col-md-2'>
+                <div className='col-sm-auto'>
                   <div>
-                    <FontAwesomeIcon icon={faTimes} /> Nej
+                    <p><img className='icon' src={faSquare} /> Kvar att göra</p>
                   </div>
                 </div>
-                <div className='col-8 col-sm-8 col-md-8'>
-                  <FontAwesomeIcon icon={faMinus} /> Inte aktuellt / Inget svar
+                <div className='col-8 col-sm-auto col-lg-8'>
+                  <p><img className='icon' src={faMinus} /> Inte aktuellt / Inget svar</p>
                 </div>
               </div>
             </div>
@@ -104,6 +119,13 @@ export default ({ reportId }) => {
               <table className='table'>
                 <tbody>{rows}</tbody>
               </table>
+            </div>
+          </div>
+          <div className='row justify-content-end'>
+            <div className='col-auto print'>
+              <div onClick={() => print()}>
+                <p>Skriv ut <img className='icon print' src={faPrint} /></p>
+              </div>
             </div>
           </div>
         </>
