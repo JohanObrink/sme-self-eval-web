@@ -8,6 +8,15 @@ h1 {
     margin-bottom: 1.5rem;
 }
 
+.icon {
+    height: 20px;
+    width: 20px;
+}
+
+.print  {
+    cursor: pointer;
+}
+
 .report-header {
     > :last-child {
         background-color: black;
@@ -25,9 +34,20 @@ h1 {
 
 .report-explanation {
     background-color: #F6F6F6;
+    > :first-of-type h3 {
+        font-size: 0.825rem;
+        font-weight: 400;
+        padding-top: 0.825rem;
+    }
+    > :first-child {
+        .row {
+            margin-bottom: 0rem;
+        }
+    }
     > :last-child {
         .row {
-            margin-bottom: 1rem;
+            margin-top: 0.5rem;
+            margin-bottom: 0rem;
         }
     }
 }
@@ -40,10 +60,11 @@ h1 {
         font-size: 0.875rem;
         font-weight: 500;
         border: 0rem;
+        margin-top: 1rem;
     }
     td {
-        border-top: 0;
-        border-bottom: 1px solid #c6c6c6;
+        border-bottom: 0;
+        padding-right: 0rem;
     }
 }
 

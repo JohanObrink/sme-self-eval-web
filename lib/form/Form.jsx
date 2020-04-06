@@ -53,7 +53,7 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
       <hr />
       <div className='row justify-content-end'>
         <div className='col-auto prev-next-buttons'>
-          {navState.prev && <Button theme='secondary' onClick={() => { scrollToTop(); dispatch({ type: actions.PREVIOUS })}}>Tidigare</Button>}
+          {navState.prev && <Button theme='secondary' onClick={() => { scrollToTop(); dispatch({ type: actions.PREVIOUS })}}>Tillbaka</Button>}
           {navState.next && <Button theme='primary' onClick={() => { scrollToTop(); dispatch({ type: actions.NEXT })}}>Nästa</Button>}
           {!navState.next && <Button theme='primary' onClick={() => { save(); setButtonIsLoading(true)}} disabled={buttonIsLoading}>Slutför</Button>}
         </div>
