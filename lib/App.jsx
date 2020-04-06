@@ -12,7 +12,7 @@ export default () => {
         <a href='https://seb.se/'>
           <div className='navbar-brand'>Självtest</div>
         </a>
-        <a href="/">
+        <a href='/'>
           <span className='navbar-text float-left'>Testa din verksamhet</span>
         </a>
       </nav>
