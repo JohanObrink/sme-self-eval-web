@@ -47,7 +47,7 @@ export default () => {
             </a>
           </p>
         </div>
-        <div className='col-sm-12 col-md-6'>
+        <div className='col-sm-12 col-md-6 order-last order-sm-second personal-code'>
           <div className='row'>
             <div className='col'>
               <p>Din personliga kod</p>
@@ -67,10 +67,11 @@ export default () => {
             </div>
           </div>
         </div>
+        <div className='col-12 order-second order-md-last'>
+          {reportId && <Report reportId={reportId} />}
+          {!reportId && <LoadReport />}
+        </div>
       </div>
-
-      {reportId && <Report reportId={reportId} />}
-      {!reportId && <LoadReport />}
     </div>
   )
 }
