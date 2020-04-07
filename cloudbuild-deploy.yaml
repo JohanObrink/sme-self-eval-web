@@ -7,7 +7,7 @@ steps:
   args: ['run', 'build']
   env:
   - API_HOST=$_API_HOST
-  - TRACKING_CODE=$_TRACKING_CODE
+  - TRACKING_URL=$_TRACKING_URL
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['app', 'deploy']
 timeout: "1600s"
