@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start:api": "cross-env STORE=memory node ./dev/localApi",
-    "start:web": "cross-env API_HOST=http://localhost:1337 TRACKING_CODE=065c214c4c39-development parcel index.njk --no-source-maps",
+    "start:web": "cross-env API_HOST=http://10.0.1.54:1337 TRACKING_CODE=065c214c4c39-development parcel index.njk --no-source-maps",
     "start": "concurrently \"npm:start:api\" \"npm:start:web\"",
     "build": "parcel build index.njk --no-source-maps",
     "lint": "eslint ./lib/**/*.js* --fix",
