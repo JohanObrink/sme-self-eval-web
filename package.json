@@ -38,7 +38,7 @@
     "react-dom": "16.13.1",
     "react-router-dom": "5.1.2",
     "style": "0.0.3",
-    "unfetch": "^4.1.0"
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
