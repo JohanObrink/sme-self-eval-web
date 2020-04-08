@@ -82,8 +82,51 @@ h1 {
     }
 }
 
+.intro-page {
+    h1 {
+        margin-bottom: 1rem;
+        margin-top: -0.875rem;
+    }
+    h3, h4 {
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+    }
+    > :last-of-type Button {
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+        @media (min-width: 576px) {
+            Button {
+                width: 80%;
+            }
+        }
+    }
+}
+
 .previous-test {
-    margin-top: 2.5rem;
+    background-color: black;
+    color: white;
+    a {
+        :hover {
+            color: white;
+        }
+        color: white;
+    }
+    img {
+        height: 1rem;
+    }
+    h1, h2, h3, h4, h5 {
+        color: white;
+        font-weight: 400;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+    .strong {
+        font-weight: 500;
+    }
+    .row {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
 }
 
 .form-check-inline button:not(:first-child) {

@@ -1,33 +1,32 @@
 import React, { useState } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Button } from '@sebgroup/react-components/dist/Button/Button'
 import { TextBox } from '@sebgroup/react-components/dist/TextBox/TextBox'
+import faArrowRight from './assets/arrow-right.svg'
 
 export default () => {
-  let history = useHistory()
   const [reportId, setReportId] = useState("")
 
-  const goToReport = () => {
-    if(reportId !== "") {
-      history.push(`/report/${reportId}`); history.goForward();
-    }
-  }
-
   return (
-    <div className='container'>
+    <div className='container intro-page'>
       <div className='row'>
-        <div className='col'>
+        <div className='col-12'>
+          <p>Senast uppdaterad 4 april 2020.</p>
+        </div>
+        <div className='col-12'>
           <h1>Hur påverkas din verksamhet av coronautbrottet?</h1>
         </div>
       </div>
       <div className='row'>
-        <div className='col'>
-          <p>
+        <div className='col-12 order-first order-sm-first'>
+          <h3>
             I tider av kris är det viktigt att få en överblick över ditt
             företags situation. Med det här självskattningsverktyget vill vi ge
             dig bättre koll på tänkbara åtgärder som du själv kan vidta och
             vilken hjälp du kan få från oss och myndigheter.
-          </p>
+          </h3>
+        </div>
+        <div className='col-md-6 order-second order-sm-second'>
           <p>
             Frågorna är generella och alla kanske inte gäller din verksamhet. När du har
             svarat på frågorna får du en sammanställning med dina svar och
@@ -45,36 +44,33 @@ export default () => {
               vår integritetspolicy.
             </a>
           </p>
-          <p>Senast uppdaterad 4 april 2020.</p>
         </div>
-      </div>
-      <div className='row'>
-        <div className='col'>
-          <Link to='/test'>
-            <Button theme='primary'>Starta</Button>
-          </Link>
-        </div>
-      </div>
-      <div className='row previous-test'>
-        <div className='col'>
-          <h3>Har du redan gjort testet?</h3>
-        </div>
-      </div>
-      <div className='row'>
-        <div className='col'>
-          <div className='row align-items-center'>
-            <div className='col-6 col-sm-4 col-md-3 col-lg-2'>
-              <TextBox type='text' value={reportId} placeholder='' maxLength='10' onChange={(event) => setReportId(event.target.value)} />
-            </div>
-            <div className='col'>
-              <p>Fyll i din kod för att se din checklista.</p>
-            </div>
-          </div>
+        <div className='col-md-6 order-4 order-md-3 previous-test'>
           <div className='row'>
-            <div className='col'>
-              <Button onClick={() => { goToReport() }}>Hämta checklista</Button>
+            <div className='col-12 align-self-start'>
+              <h4>Har du redan gjort testet?</h4>
+            </div>
+            <div className='col-6'>
+              <div className='row'>
+                <div className='col-12 strong align-self-start'>
+                  <p>Fyll i din kod.</p>
+                </div>
+                <div className='col'>
+                  <TextBox type='text' value={reportId} placeholder='' maxLength='10' onChange={(event) => setReportId(event.target.value)} />
+                </div>
+              </div>
+              <div className='row'>
+                <div className='col strong align-self-start strong'>
+                  <Link to={{pathname: `/report/${reportId}`}}>Hämta checklista <img className='icon' src={faArrowRight} /></Link>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
+        <div className='col-12 col-md-3 order-3 order-md-4'>
+          <Link to='/test'>
+            <Button theme='primary' className='btn-block'>Starta verktyget</Button>
+          </Link>
         </div>
       </div>
     </div>
