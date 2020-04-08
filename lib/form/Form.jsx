@@ -1,41 +1,41 @@
-import React, { useState, useEffect } from 'react'
-import { useHistory, useLocation } from 'react-router-dom'
-import { trackPage, toolStarted, toolCompleted } from '../analytics'
-import { Button } from '@sebgroup/react-components/dist/Button/Button'
-import FormStep from './FormStep'
-import { actions } from './constants'
-import * as api from '../api'
+import React, { useState, useEffect } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
+import { trackPage, toolStarted, toolCompleted } from '../analytics';
+import { Button } from '@sebgroup/react-components/dist/Button/Button';
+import FormStep from './FormStep';
+import { actions } from './constants';
+import * as api from '../api';
 
 const getNavState = (stepIndex, steps) => ({
   prev: stepIndex > 0,
-  next: stepIndex < steps.length - 1
-})
+  next: stepIndex < steps.length - 1,
+});
 
 const Form = ({ form, stepIndex, dispatch, data }) => {
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
 
   let history = useHistory();
-  const [buttonIsLoading, setButtonIsLoading] = useState(false)
-  const [navState, setNavState] = useState(getNavState(stepIndex, form.steps))
-  const [currentStep, setCurrentStep] = useState(form.steps[stepIndex])
+  const [buttonIsLoading, setButtonIsLoading] = useState(false);
+  const [navState, setNavState] = useState(getNavState(stepIndex, form.steps));
+  const [currentStep, setCurrentStep] = useState(form.steps[stepIndex]);
   useEffect(() => {
     if (stepIndex === 0) {
-      toolStarted()
+      toolStarted();
     }
-    setNavState(getNavState(stepIndex, form.steps))
-    setCurrentStep(form.steps[stepIndex])
+    setNavState(getNavState(stepIndex, form.steps));
+    setCurrentStep(form.steps[stepIndex]);
     if (stepIndex) {
-      trackPage(`${pathname}/${stepIndex + 1}`)
+      trackPage(`${pathname}/${stepIndex + 1}`);
     }
-  }, [stepIndex])
+  }, [stepIndex]);
 
   const save = async () => {
-    toolCompleted()
-    const { id } = await api.create(data)
-    dispatch({ type: actions.FINISH, payload: id })
+    toolCompleted();
+    const { id } = await api.create(data);
+    dispatch({ type: actions.FINISH, payload: id });
 
-    history.push(`/report/${id}`)
-    history.goForward()
+    history.push(`/report/${id}`);
+    history.goForward();
   };
 
   const scrollToTop = () => {
@@ -46,20 +46,50 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
     }
   };
 
-
   return (
     <>
       <FormStep {...currentStep} dispatch={dispatch} data={data} />
       <hr />
-      <div className='row justify-content-end'>
-        <div className='col-auto prev-next-buttons'>
-          {navState.prev && <Button theme='secondary' onClick={() => { scrollToTop(); dispatch({ type: actions.PREVIOUS })}}>Tillbaka</Button>}
-          {navState.next && <Button theme='primary' onClick={() => { scrollToTop(); dispatch({ type: actions.NEXT })}}>Nästa</Button>}
-          {!navState.next && <Button theme='primary' onClick={() => { save(); setButtonIsLoading(true)}} disabled={buttonIsLoading}>Slutför</Button>}
+      <div className="row justify-content-end">
+        <div className="col-auto prev-next-buttons">
+          {navState.prev && (
+            <Button
+              theme="secondary"
+              onClick={() => {
+                scrollToTop();
+                dispatch({ type: actions.PREVIOUS });
+              }}
+            >
+              Tillbaka
+            </Button>
+          )}
+          {navState.next && (
+            <Button
+              theme="primary"
+              onClick={() => {
+                scrollToTop();
+                dispatch({ type: actions.NEXT });
+              }}
+            >
+              Nästa
+            </Button>
+          )}
+          {!navState.next && (
+            <Button
+              theme="primary"
+              onClick={() => {
+                save();
+                setButtonIsLoading(true);
+              }}
+              disabled={buttonIsLoading}
+            >
+              Slutför
+            </Button>
+          )}
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Form
+export default Form;
