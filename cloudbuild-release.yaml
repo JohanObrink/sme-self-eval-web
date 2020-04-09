@@ -1,8 +1,8 @@
 steps:
-- name: node:10.19.0
-  entrypoint: npm
-  args: ['ci']
-- name: node:10.19.0
-  entrypoint: npm
-  args: ['run', 'semantic-release']
-timeout: "1600s"
+  - name: node:10.19.0
+    entrypoint: npm
+    args: ['ci']
+  - name: node:10.19.0
+    entrypoint: npm
+    args: ['run', 'semantic-release']
+timeout: '1600s'
