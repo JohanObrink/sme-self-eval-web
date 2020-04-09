@@ -51,13 +51,13 @@ const renderQuestion = ({
 export default ({ headline, title, questions = [], dispatch, data }) => {
   return (
     <>
-      <div className='row'>
-        <div className='col'>
+      <div className="row">
+        <div className="col">
           <h6>{title}</h6>
           <h2>{headline}</h2>
         </div>
       </div>
-      <section role='questions'>
+      <section role="questions">
         {questions.map((q) => renderQuestion({ ...q, dispatch, data }))}
       </section>
     </>

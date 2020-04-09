@@ -24,16 +24,16 @@ export default ({ reportId }) => {
   const iconRender = (value) => {
     switch (value) {
       case 'ja':
-        return <img className='icon' src={faCheckSquare} />;
+        return <img className="icon" src={faCheckSquare} />;
         break;
       case 'nej':
-        return <img className='icon' src={faSquare} />;
+        return <img className="icon" src={faSquare} />;
         break;
       case 'ignorera':
-        return <img className='icon' src={faMinus} />;
+        return <img className="icon" src={faMinus} />;
         break;
       default:
-        return <img className='icon' src={faMinus} />;
+        return <img className="icon" src={faMinus} />;
         break;
     }
   };
@@ -49,7 +49,7 @@ export default ({ reportId }) => {
     if (step.reportHeadline) {
       rows.push(
         <tr key={i}>
-          <th colSpan='2' key={step.reportHeadline}>
+          <th colSpan="2" key={step.reportHeadline}>
             {step.reportHeadline}
           </th>
         </tr>
@@ -77,8 +77,8 @@ export default ({ reportId }) => {
 
   return (
     <>
-      <div className='row'>
-        <div className='col'>
+      <div className="row">
+        <div className="col">
           {loading && <div>Läser in...</div>}
 
           {error && (
@@ -91,49 +91,49 @@ export default ({ reportId }) => {
       </div>
       {report && report.data && (
         <>
-          <div className='row report-explanation'>
-            <div className='col'>
-              <div className='row'>
-                <div className='col-4'>
+          <div className="row report-explanation">
+            <div className="col">
+              <div className="row">
+                <div className="col-4">
                   <h3>Teckenförklaring</h3>
                 </div>
               </div>
-              <div className='row justify-content-start'>
-                <div className='col-12 col-sm-auto'>
+              <div className="row justify-content-start">
+                <div className="col-12 col-sm-auto">
                   <div>
                     <p>
-                      <img className='icon' src={faCheckSquare} /> Åtgärd klar
+                      <img className="icon" src={faCheckSquare} /> Åtgärd klar
                     </p>
                   </div>
                 </div>
-                <div className='col-sm-auto'>
+                <div className="col-sm-auto">
                   <div>
                     <p>
-                      <img className='icon' src={faSquare} /> Kvar att göra
+                      <img className="icon" src={faSquare} /> Kvar att göra
                     </p>
                   </div>
                 </div>
-                <div className='col-8 col-sm-auto col-lg-8'>
+                <div className="col-8 col-sm-auto col-lg-8">
                   <p>
-                    <img className='icon' src={faMinus} /> Inte aktuellt / Inget
+                    <img className="icon" src={faMinus} /> Inte aktuellt / Inget
                     svar
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <div className='row'>
-            <div className='col report-table'>
-              <table className='table'>
+          <div className="row">
+            <div className="col report-table">
+              <table className="table">
                 <tbody>{rows}</tbody>
               </table>
             </div>
           </div>
-          <div className='row justify-content-end'>
-            <div className='col-auto print'>
+          <div className="row justify-content-end">
+            <div className="col-auto print">
               <div onClick={() => print()}>
                 <p>
-                  Skriv ut <img className='icon print' src={faPrint} />
+                  Skriv ut <img className="icon print" src={faPrint} />
                 </p>
               </div>
             </div>
