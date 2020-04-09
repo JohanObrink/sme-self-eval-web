@@ -50,11 +50,11 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
     <>
       <FormStep {...currentStep} dispatch={dispatch} data={data} />
       <hr />
-      <div className='row justify-content-end'>
-        <div className='col-auto prev-next-buttons'>
+      <div className="row justify-content-end">
+        <div className="col-auto prev-next-buttons">
           {navState.prev && (
             <Button
-              theme='secondary'
+              theme="secondary"
               onClick={() => {
                 scrollToTop();
                 dispatch({ type: actions.PREVIOUS });
@@ -65,7 +65,7 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
           )}
           {navState.next && (
             <Button
-              theme='primary'
+              theme="primary"
               onClick={() => {
                 scrollToTop();
                 dispatch({ type: actions.NEXT });
@@ -76,7 +76,7 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
           )}
           {!navState.next && (
             <Button
-              theme='primary'
+              theme="primary"
               onClick={() => {
                 save();
                 setButtonIsLoading(true);

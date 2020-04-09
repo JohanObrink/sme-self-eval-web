@@ -31,7 +31,7 @@ export default (props) => {
   }, [val]);
   return (
     <Question {...props}>
-      <div className='form-check form-check-inline'>{getButtons(data)}</div>
+      <div className="form-check form-check-inline">{getButtons(data)}</div>
     </Question>
   );
 };

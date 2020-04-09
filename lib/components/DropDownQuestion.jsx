@@ -13,8 +13,8 @@ export default (props) => {
   return (
     <Question {...props}>
       <Dropdown
-        placeholder='Välj ...'
-        searchPlaceholder='Sök ...'
+        placeholder="Välj ..."
+        searchPlaceholder="Sök ..."
         list={data}
         selectedValue={val}
         onChange={(newVal) => setVal(newVal)}

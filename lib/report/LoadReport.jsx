@@ -16,12 +16,12 @@ export default () => {
     <div>
       <h2>Load report</h2>
       <TextBox
-        type='text'
+        type="text"
         value={reportId}
         onChange={(event) => setReportId(event.target.value)}
       />
       <Button
-        label='Hämta'
+        label="Hämta"
         disabled={!valid}
         onClick={() => history.push(`./${reportId.toLowerCase()}`)}
       />
