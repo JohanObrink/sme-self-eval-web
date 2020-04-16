@@ -37,7 +37,7 @@ export default () => {
           </p>
           <p>
             <strong>
-              Vi har ovanligt hög belastning just men gör allt för att hjälpa
+              Vi har ovanligt hög belastning just nu men gör allt för att hjälpa
               dig snarast möjligt.
             </strong>
           </p>
