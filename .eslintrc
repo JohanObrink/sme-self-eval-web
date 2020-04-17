@@ -1,7 +1,15 @@
 {
   "parser": "babel-eslint",
-  "plugins": ["jest"],
-  "extends": ["standard-react", "plugin:jest/recommended"],
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": false,
+    "codeFrame": false
+  },
+  "extends": [
+    "plugin:prettier/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:jest/recommended"
+  ],
   "rules": {
     "react/prop-types": 0,
     "jest/expect-expect": "error"
