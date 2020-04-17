@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 export default ({ question, children }) => {
   return (
@@ -8,5 +8,5 @@ export default ({ question, children }) => {
         {children}
       </div>
     </div>
-  );
-};
+  )
+}

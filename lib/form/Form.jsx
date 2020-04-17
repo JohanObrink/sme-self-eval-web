@@ -1,50 +1,50 @@
-import React, { useState, useEffect } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
-import { trackPage, toolStarted, toolCompleted } from '../analytics';
-import { Button } from '@sebgroup/react-components/dist/Button/Button';
-import FormStep from './FormStep';
-import { actions } from './constants';
-import * as api from '../api';
+import React, { useState, useEffect } from 'react'
+import { useHistory, useLocation } from 'react-router-dom'
+import { Button } from '@sebgroup/react-components/dist/Button/Button'
+import { trackPage, toolStarted, toolCompleted } from '../analytics'
+import FormStep from './FormStep'
+import { actions } from './constants'
+import * as api from '../api'
 
 const getNavState = (stepIndex, steps) => ({
   prev: stepIndex > 0,
   next: stepIndex < steps.length - 1,
-});
+})
 
 const Form = ({ form, stepIndex, dispatch, data }) => {
-  const { pathname } = useLocation();
+  const { pathname } = useLocation()
 
-  let history = useHistory();
-  const [buttonIsLoading, setButtonIsLoading] = useState(false);
-  const [navState, setNavState] = useState(getNavState(stepIndex, form.steps));
-  const [currentStep, setCurrentStep] = useState(form.steps[stepIndex]);
+  const history = useHistory()
+  const [buttonIsLoading, setButtonIsLoading] = useState(false)
+  const [navState, setNavState] = useState(getNavState(stepIndex, form.steps))
+  const [currentStep, setCurrentStep] = useState(form.steps[stepIndex])
   useEffect(() => {
     if (stepIndex === 0) {
-      toolStarted();
+      toolStarted()
     }
-    setNavState(getNavState(stepIndex, form.steps));
-    setCurrentStep(form.steps[stepIndex]);
+    setNavState(getNavState(stepIndex, form.steps))
+    setCurrentStep(form.steps[stepIndex])
     if (stepIndex) {
-      trackPage(`${pathname}/${stepIndex + 1}`);
+      trackPage(`${pathname}/${stepIndex + 1}`)
     }
-  }, [stepIndex]);
+  }, [stepIndex])
 
   const save = async () => {
-    toolCompleted();
-    const { id } = await api.create(data);
-    dispatch({ type: actions.FINISH, payload: id });
+    toolCompleted()
+    const { id } = await api.create(data)
+    dispatch({ type: actions.FINISH, payload: id })
 
-    history.push(`/report/${id}`);
-    history.goForward();
-  };
+    history.push(`/report/${id}`)
+    history.goForward()
+  }
 
   const scrollToTop = () => {
-    const c = document.documentElement.scrollTop || document.body.scrollTop;
+    const c = document.documentElement.scrollTop || document.body.scrollTop
     if (c > 0) {
-      window.requestAnimationFrame(scrollToTop);
-      window.scrollTo(0, c - c / 8);
+      window.requestAnimationFrame(scrollToTop)
+      window.scrollTo(0, c - c / 8)
     }
-  };
+  }
 
   return (
     <>
@@ -56,8 +56,8 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
             <Button
               theme="secondary"
               onClick={() => {
-                scrollToTop();
-                dispatch({ type: actions.PREVIOUS });
+                scrollToTop()
+                dispatch({ type: actions.PREVIOUS })
               }}
             >
               Tillbaka
@@ -67,8 +67,8 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
             <Button
               theme="primary"
               onClick={() => {
-                scrollToTop();
-                dispatch({ type: actions.NEXT });
+                scrollToTop()
+                dispatch({ type: actions.NEXT })
               }}
             >
               Nästa
@@ -78,8 +78,8 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
             <Button
               theme="primary"
               onClick={() => {
-                save();
-                setButtonIsLoading(true);
+                save()
+                setButtonIsLoading(true)
               }}
               disabled={buttonIsLoading}
             >
@@ -89,7 +89,7 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Form;
+export default Form
