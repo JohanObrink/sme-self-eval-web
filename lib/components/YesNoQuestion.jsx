@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import Question from './Question';
-import { RadioButton } from '@sebgroup/react-components/dist/RadioButton/RadioButton';
+import React, { useState, useEffect } from 'react'
+import { RadioButton } from '@sebgroup/react-components/dist/RadioButton/RadioButton'
+import Question from './Question'
 
 export default (props) => {
-  const { value, onChange, path } = props;
-  const [val, setVal] = useState(value);
+  const { value, onChange, path } = props
+  const [val, setVal] = useState(value)
 
   useEffect(() => {
-    onChange && onChange(val);
-  }, [val]);
+    onChange && onChange(val)
+  }, [val])
   return (
     <Question {...props}>
       <div className="form-check form-check-inline">
@@ -38,5 +38,5 @@ export default (props) => {
         />
       </div>
     </Question>
-  );
-};
+  )
+}
