@@ -14,7 +14,7 @@ export default () => {
   }, [reportId]);
   return (
     <div>
-      <h2>Load report</h2>
+      <h2>Ladda rapport</h2>
       <TextBox
         type="text"
         value={reportId}
