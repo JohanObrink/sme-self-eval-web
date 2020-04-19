@@ -131,7 +131,7 @@ export default ({ reportId }) => {
           </div>
           <div className="row justify-content-end">
             <div className="col-auto print">
-              <div role="button" tabIndex={0} onKeyDown={this.handleClick} onClick={() => print()}>
+              <div role="button" tabIndex={0} onKeyDown={() => print()} onClick={() => print()}>
                 <p>
                   Skriv ut <img className="icon print" alt="Skriv ut" src={faPrint} />
                 </p>
