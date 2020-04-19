@@ -20,8 +20,8 @@
     "start:web": "cross-env API_HOST=http://localhost:1337 TRACKING_URL=//assets.adobedtm.com/30e54a9d6c99/f9d07ef22744/launch-065c214c4c39-development.min.js parcel index.njk --no-source-maps",
     "start": "concurrently \"npm:start:api\" \"npm:start:web\"",
     "build": "parcel build index.njk --no-source-maps",
-    "lint": "eslint ./lib/**/*.js* --fix",
-    "lint:watch": "esw ./lib/**/*.js* --watch --fix --color",
+    "lint": "eslint lib/*.js lib/**/*.js* --fix",
+    "lint:watch": "esw lib/*.js lib/**/*.js* --watch --fix --color",
     "test": "jest --config jest.config.approval.js",
     "test:watch": "jest --config jest.config.js --watchAll",
     "lintAndTest": "npm run lint && npm test"

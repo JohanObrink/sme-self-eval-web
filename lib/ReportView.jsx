@@ -1,10 +1,10 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import LoadReport from './report/LoadReport';
-import Report from './report/Report';
+import React from 'react'
+import { useParams } from 'react-router-dom'
+import LoadReport from './report/LoadReport'
+import Report from './report/Report'
 
 export default () => {
-  const { reportId } = useParams();
+  const { reportId } = useParams()
   return (
     <div className="container">
       <div className="row">
@@ -14,19 +14,15 @@ export default () => {
       </div>
       <div className="row">
         <div className="col">
-          <h3>
-            Här ser du våra förslag på åtgärder och vart du kan vända dig för
-            att få hjälp.
-          </h3>
+          <h3>Här ser du våra förslag på åtgärder och vart du kan vända dig för att få hjälp.</h3>
         </div>
       </div>
       <div className="row report-header">
         <div className="col-sm-12 col-md-6 col-lg-6">
           <p>
-            Förslagen är generella och du kan behöva vidta fler åtgärder. Prata
-            med din rådgivare om vilka åtgärder som kan vara aktuella och
-            relevanta för dig. Har du ingen företagsrådgivare är du välkommen
-            att{' '}
+            Förslagen är generella och du kan behöva vidta fler åtgärder. Prata med din rådgivare om
+            vilka åtgärder som kan vara aktuella och relevanta för dig. Har du ingen
+            företagsrådgivare är du välkommen att{' '}
             <a
               href="https://seb.se/var-kundservice/contact/c1119-kundservice-foeretag"
               target="blank"
@@ -37,8 +33,8 @@ export default () => {
           </p>
           <p>
             <strong>
-              Vi har ovanligt hög belastning just nu men gör allt för att hjälpa
-              dig snarast möjligt.
+              Vi har ovanligt hög belastning just nu men gör allt för att hjälpa dig snarast
+              möjligt.
             </strong>
           </p>
           <p>
@@ -64,10 +60,7 @@ export default () => {
           </div>
           <div className="row">
             <div className="col align-self-end">
-              <p>
-                Bokmärk den här sidan eller kom tillbaka till den med hjälp av
-                din kod.
-              </p>
+              <p>Bokmärk den här sidan eller kom tillbaka till den med hjälp av din kod.</p>
             </div>
           </div>
         </div>
@@ -77,5 +70,5 @@ export default () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from '@sebgroup/react-components/dist/Button/Button';
-import { TextBox } from '@sebgroup/react-components/dist/TextBox/TextBox';
-import faArrowRight from './assets/arrow-right.svg';
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { Button } from '@sebgroup/react-components/dist/Button/Button'
+import { TextBox } from '@sebgroup/react-components/dist/TextBox/TextBox'
+import faArrowRight from './assets/arrow-right.svg'
 
 export default () => {
-  const [reportId, setReportId] = useState('');
+  const [reportId, setReportId] = useState('')
 
   return (
     <div className="container intro-page">
@@ -20,22 +20,19 @@ export default () => {
       <div className="row">
         <div className="col-12 order-first order-sm-first">
           <h3>
-            I tider av kris är det viktigt att få en överblick över ditt
-            företags situation. Med det här självskattningsverktyget vill vi ge
-            dig bättre koll på tänkbara åtgärder som du själv kan vidta och
-            vilken hjälp du kan få från oss och myndigheter.
+            I tider av kris är det viktigt att få en överblick över ditt företags situation. Med det
+            här självskattningsverktyget vill vi ge dig bättre koll på tänkbara åtgärder som du
+            själv kan vidta och vilken hjälp du kan få från oss och myndigheter.
           </h3>
         </div>
         <div className="col-md-6 order-second order-sm-second">
           <p>
-            Frågorna är generella och alla kanske inte gäller din verksamhet.
-            När du har svarat på frågorna får du en sammanställning med dina
-            svar och förslag på åtgärder.
+            Frågorna är generella och alla kanske inte gäller din verksamhet. När du har svarat på
+            frågorna får du en sammanställning med dina svar och förslag på åtgärder.
           </p>
           <p>
-            Uppgifterna du fyller i är enbart tillgänglig via koden du får när
-            du är färdig, så se till att notera den. Vi behandlar dina uppgifter
-            enligt{' '}
+            Uppgifterna du fyller i är enbart tillgänglig via koden du får när du är färdig, så se
+            till att notera den. Vi behandlar dina uppgifter enligt{' '}
             <a
               href="https://seb.se/juridik-och-sakerhet/sebs-integritetspolicy"
               target="blank"
@@ -84,5 +81,5 @@ export default () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
