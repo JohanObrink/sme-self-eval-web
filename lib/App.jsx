@@ -1,9 +1,9 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import IntroView from './IntroView';
-import UserView from './UserView';
-import ReportView from './ReportView';
-import PageTracker from './components/PageTracker';
+import React from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import IntroView from './IntroView'
+import UserView from './UserView'
+import ReportView from './ReportView'
+import PageTracker from './components/PageTracker'
 
 export default () => {
   return (
@@ -24,5 +24,5 @@ export default () => {
         </Switch>
       </PageTracker>
     </Router>
-  );
-};
+  )
+}
