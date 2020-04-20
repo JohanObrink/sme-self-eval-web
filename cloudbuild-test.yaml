@@ -10,5 +10,5 @@ steps:
     args: ['test']
   - name: node:10.19.0
     entrypoint: npm
-    args: ['e2e']
+    args: ['run', 'e2e']
 timeout: '1600s'
