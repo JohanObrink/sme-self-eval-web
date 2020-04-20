@@ -1,11 +1,14 @@
 steps:
-  - name: node:10.19.0
+  - name: cypress/included:4.4.0
     entrypoint: npm
     args: ['ci']
-  - name: node:10.19.0
+  - name: cypress/included:4.4.0
     entrypoint: npm
     args: ['run', 'lint']
-  - name: node:10.19.0
+  - name: cypress/included:4.4.0
     entrypoint: npm
     args: ['test']
+  - name: cypress/included:4.4.0
+    entrypoint: npm
+    args: ['run', 'e2e']
 timeout: '1600s'
