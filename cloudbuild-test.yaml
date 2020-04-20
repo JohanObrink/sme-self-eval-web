@@ -8,4 +8,13 @@ steps:
   - name: node:10.19.0
     entrypoint: npm
     args: ['test']
+  - name: node:10.19.0
+    entrypoint: npm
+    args: ['run', 'build']
+    env:
+      - API_HOST=https://api-test-dot-sme-self-eval-tool-99p47-dev.appspot.com/
+      - TRACKING_URL=//assets.adobedtm.com/30e54a9d6c99/f9d07ef22744/launch-065c214c4c39-development.min.js
+      - NODE_ENV=test
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['app', 'deploy', 'app-pr.yaml']
 timeout: '1600s'
