@@ -1,4 +1,6 @@
 {
   "baseUrl": "http://localhost:1234",
-  "video": false
+  "env": {
+    "NODE_ENV": "ci"
+  }
 }
