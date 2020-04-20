@@ -34,6 +34,7 @@ describe('Report', () => {
     cy.question(3).answer(0)
     cy.finish()
 
+    cy.wait(1000)
     cy.url().then(url => reportUrl = url)
   })
   beforeEach(() => {
