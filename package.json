@@ -24,7 +24,10 @@
     "lint:watch": "esw lib/*.js lib/**/*.js* --watch --fix --color",
     "test": "jest --config jest.config.approval.js",
     "test:watch": "jest --config jest.config.js --watchAll",
-    "lintAndTest": "npm run lint && npm test"
+    "lintAndTest": "npm run lint && npm test",
+    "cypress:run": "cypress run",
+    "cypress:open": "cypress open",
+    "e2e": "start-server-and-test start http://localhost:1234 cypress:run"
   },
   "bugs": {
     "url": "https://github.com/JohanObrink/sme-self-eval-web/issues"
@@ -56,6 +59,8 @@
     "babel-eslint": "^10.1.0",
     "concurrently": "^5.1.0",
     "cross-env": "^7.0.2",
+    "cypress": "^4.4.0",
+    "cypress-axe": "^0.8.1",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-config-prettier-standard": "^3.0.1",
@@ -80,6 +85,7 @@
     "sass": "^1.26.3",
     "semantic-release": "^17.0.4",
     "sme-self-eval-api": "git+https://github.com/JohanObrink/sme-self-eval-api.git",
+    "start-server-and-test": "^1.11.0",
     "typescript": "^3.8.3"
   },
   "sass": {
