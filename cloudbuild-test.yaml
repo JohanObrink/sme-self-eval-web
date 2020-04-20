@@ -14,5 +14,9 @@ steps:
 artifacts:
   objects:
     location: 'gs://eu.artifacts.sme-self-eval-tool-99p47-dev.appspot.com/artifacts'
-    paths: ['./cypress/screenshots/**.*', './cypress/videos/**.*']
+    paths: [
+      '/workspace/cypress/screenshots/**.*',
+      '/workspace/cypress/videos/**.*',
+      '/builder/home/.npm/_logs/**.log'
+    ]
 timeout: '1600s'
