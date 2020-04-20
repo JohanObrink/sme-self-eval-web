@@ -19,13 +19,13 @@ h1 {
 
 .report-header {
   > .personal-code {
-    background-color: black;
-    color: white;
+    background-color: $black;
+    color: $white;
     h1,
     h2,
     h3,
     h4 {
-      color: white;
+      color: $white;
       font-weight: 400;
     }
     .row {
@@ -36,7 +36,7 @@ h1 {
 }
 
 .report-explanation {
-  background-color: #f6f6f6;
+  background-color: $gray-100;
   > :first-of-type h3 {
     font-size: 0.825rem;
     font-weight: 400;
@@ -59,7 +59,7 @@ h1 {
   padding-left: 0;
   padding-right: 0;
   th {
-    background-color: #f6f6f6;
+    background-color: $gray-100;
     font-size: 0.875rem;
     font-weight: 500;
     border: 0rem;
@@ -106,13 +106,13 @@ h1 {
 }
 
 .previous-test {
-  background-color: black;
-  color: white;
+  background-color: $black;
+  color: $white;
   a {
     :hover {
-      color: white;
+      color: $white;
     }
-    color: white;
+    color: $white;
   }
   img {
     height: 1rem;
@@ -122,7 +122,7 @@ h1 {
   h3,
   h4,
   h5 {
-    color: white;
+    color: $white;
     font-weight: 400;
     margin-bottom: 1rem;
     margin-top: 1rem;
@@ -137,7 +137,7 @@ h1 {
 }
 
 .form-check-inline button:not(:first-child) {
-  margin-left: 16px;
+  margin-left: 1rem;
 }
 
 .custom-dropdown > .custom-dropdown-toggle:focus {
@@ -163,4 +163,30 @@ h1 {
   box-shadow: 0 0 0 0.2rem rgba($blue-darker, 0.5) !important;
   border-color: $blue-darker !important;
   border-radius: 0.25rem;
+}
+
+.greybox {
+  background-color: $gray-300;
+  padding: 2rem;
+  > button {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    background-color: $white;
+    color: $gray-900;
+    border-color: $gray-900;
+    font-size: 1.125rem;
+    &:hover {
+      color: $blue;
+      border-color: $blue;
+      background-color: $white;
+    }
+    &:active,
+    &:focus {
+      color: $blue !important;
+      background-color: $white !important;
+    }
+    & .button-label {
+      padding: 1.5rem 5rem;
+    }
+  }
 }
