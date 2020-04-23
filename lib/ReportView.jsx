@@ -2,7 +2,6 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import LoadReport from './report/LoadReport'
 import Report from './report/Report'
-import Vote from './report/Vote'
 
 export default () => {
   const { reportId } = useParams()
@@ -69,9 +68,6 @@ export default () => {
           {reportId && <Report reportId={reportId} />}
           {!reportId && <LoadReport />}
         </div>
-      </div>
-      <div className="row">
-        {/* <Vote /> */}
       </div>
     </div>
   )
