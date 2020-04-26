@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Vote from './Vote'
 import { get } from '../api'
 import { form } from '../form/data'
 import faCheckSquare from '../assets/check-square.svg'
@@ -84,7 +85,11 @@ export default ({ reportId }) => {
           {error && (
             <>
               <h4>Ett fel inträffade</h4>
-              <pre>{error.toString()}</pre>
+              <pre>
+                {error.toString() === 'Error: Not Found'
+                  ? 'Rapporten finns inte!'
+                  : error.toString()}
+              </pre>
             </>
           )}
         </div>
@@ -128,6 +133,9 @@ export default ({ reportId }) => {
                 <tbody>{rows}</tbody>
               </table>
             </div>
+          </div>
+          <div className="row">
+            <Vote reportId={reportId} />
           </div>
           <div className="row justify-content-end">
             <div className="col-auto print">
