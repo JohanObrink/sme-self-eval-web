@@ -70,9 +70,6 @@ export default () => {
           {!reportId && <LoadReport />}
         </div>
       </div>
-      <div className="row">
-        {/* <Vote /> */}
-      </div>
     </div>
   )
 }
