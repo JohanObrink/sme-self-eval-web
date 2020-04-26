@@ -84,7 +84,11 @@ export default ({ reportId }) => {
           {error && (
             <>
               <h4>Ett fel inträffade</h4>
-              <pre>{error.toString()}</pre>
+              <pre>
+                {error.toString() === 'Error: Not Found'
+                  ? 'Rapporten finns inte!'
+                  : error.toString()}
+              </pre>
             </>
           )}
         </div>
