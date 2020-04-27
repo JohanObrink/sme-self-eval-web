@@ -65,7 +65,7 @@ export default () => {
               <div className="row">
                 <div className="col strong align-self-start strong">
                   <Link to={{ pathname: `/report/${reportId}` }}>
-                    Hämta checklista <img className="icon" src={faArrowRight} />
+                    Hämta <img className="icon" src={faArrowRight} alt="Pil höger" />
                   </Link>
                 </div>
               </div>
