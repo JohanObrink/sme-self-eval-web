@@ -1,4 +1,4 @@
-@import 'styles/bootstrap.scss';
+@import 'bootstrap.scss';
 
 .container {
   margin-top: 1rem;
@@ -150,16 +150,8 @@ h1 {
   border-color: $blue-darker !important;
 }
 
-.form-group.custom-radio
-  > .input-field
-  .custom-control
-  > .custom-control-input:focus
-  + label,
-.form-group.custom-radio
-  > .input-field
-  .custom-control
-  > .custom-control-input:active
-  + label {
+.form-group.custom-radio > .input-field .custom-control > .custom-control-input:focus + label,
+.form-group.custom-radio > .input-field .custom-control > .custom-control-input:active + label {
   box-shadow: 0 0 0 0.2rem rgba($blue-darker, 0.5) !important;
   border-color: $blue-darker !important;
   border-radius: 0.25rem;
