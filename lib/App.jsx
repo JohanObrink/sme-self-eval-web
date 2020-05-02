@@ -11,10 +11,10 @@ export default () => {
     <Router>
       <nav className="navbar navbar-light bg-light">
         <a href="https://seb.se/">
-          <div className="navbar-brand">{getText("label_navleft")}</div>
+          <div className="navbar-brand">{getText('label_navleft')}</div>
         </a>
         <a href="/">
-          <span className="navbar-text float-left">{getText("label_navright")}</span>
+          <span className="navbar-text float-left">{getText('label_navright')}</span>
         </a>
       </nav>
       <PageTracker>

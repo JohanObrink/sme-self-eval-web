@@ -61,7 +61,7 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
                 dispatch({ type: actions.PREVIOUS })
               }}
             >
-              {getText("button_back")}
+              {getText('button_back')}
             </Button>
           )}
           {navState.next && (
@@ -72,7 +72,7 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
                 dispatch({ type: actions.NEXT })
               }}
             >
-              {getText("button_next")}
+              {getText('button_next')}
             </Button>
           )}
           {!navState.next && (
@@ -84,7 +84,7 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
               }}
               disabled={buttonIsLoading}
             >
-              {getText("button_finish")}
+              {getText('button_finish')}
             </Button>
           )}
         </div>

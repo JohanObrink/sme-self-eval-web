@@ -15,7 +15,7 @@ export default () => {
     <>
       <ProgressBar value={(state.currentStepIndex / (form.steps.length - 1)) * 100} />
       <div className="container">
-        <h1>{getText("label_testbuisiness")}</h1>
+        <h1>{getText('label_testbuisiness')}</h1>
         <Form
           form={form}
           data={state.data}

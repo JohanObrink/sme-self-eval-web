@@ -11,20 +11,23 @@ export default () => {
     <div className="container">
       <div className="row">
         <div className="col">
-          <h1>{getText("heading_report")}</h1>
+          <h1>{getText('heading_report')}</h1>
         </div>
       </div>
       <div className="row">
         <div className="col">
-          <h3>{getText("heading_suggestions")}</h3>
+          <h3>{getText('heading_suggestions')}</h3>
         </div>
       </div>
       <div className="row report-header">
-        <div className="col-sm-12 col-md-6 col-lg-6" dangerouslySetInnerHTML={{__html: getText("text_disclaimer")}} />
+        <div
+          className="col-sm-12 col-md-6 col-lg-6"
+          dangerouslySetInnerHTML={{ __html: getText('text_disclaimer') }}
+        />
         <div className="col-sm-12 col-md-6 order-last order-sm-second personal-code">
           <div className="row">
             <div className="col">
-              <p>{getText("label_personalcode")}</p>
+              <p>{getText('label_personalcode')}</p>
             </div>
           </div>
           <div className="row">
@@ -34,7 +37,7 @@ export default () => {
           </div>
           <div className="row">
             <div className="col align-self-end">
-              <p>{getText("label_bookmark")}</p>
+              <p>{getText('label_bookmark')}</p>
             </div>
           </div>
         </div>
