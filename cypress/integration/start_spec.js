@@ -5,7 +5,9 @@ describe('Start page', () => {
     cy.visit('/')
   })
   it('renders', () => {
-    cy.get('h1').contains('Hur påverkas din verksamhet av coronautbrottet?')
+    cy.get('h1').should($h1 =>
+      expect($h1.first().text()).to.have.length.greaterThan(5)
+    )
   })
   it('navigates to test', () => {
     cy.get('button').contains('Starta verktyget').click()

@@ -5,6 +5,7 @@ import { trackPage, toolStarted, toolCompleted } from '../analytics'
 import FormStep from './FormStep'
 import { actions } from './constants'
 import * as api from '../api'
+import { getText } from './appTexts'
 
 const getNavState = (stepIndex, steps) => ({
   prev: stepIndex > 0,
@@ -60,7 +61,7 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
                 dispatch({ type: actions.PREVIOUS })
               }}
             >
-              Tillbaka
+              {getText('button_back')}
             </Button>
           )}
           {navState.next && (
@@ -71,7 +72,7 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
                 dispatch({ type: actions.NEXT })
               }}
             >
-              Nästa
+              {getText('button_next')}
             </Button>
           )}
           {!navState.next && (
@@ -83,7 +84,7 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
               }}
               disabled={buttonIsLoading}
             >
-              Slutför
+              {getText('button_finish')}
             </Button>
           )}
         </div>
