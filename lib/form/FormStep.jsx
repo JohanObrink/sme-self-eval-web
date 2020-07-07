@@ -13,9 +13,11 @@ const renderQuestion = ({
   path,
   seed,
   validate = novalidation,
+  active,
   dispatch,
   data,
 }) => {
+  if (!active) return
   const onChange = (value) => {
     if (validate(value) && value !== data[path]) {
       trackEvent('test', 'answer', path)
