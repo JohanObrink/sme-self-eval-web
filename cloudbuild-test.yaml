@@ -19,5 +19,5 @@ steps:
       - TRACKING_URL=//assets.adobedtm.com/30e54a9d6c99/f9d07ef22744/launch-065c214c4c39-development.min.js
       - NODE_ENV=test
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['app', 'deploy', 'app.yaml', '-v', 'pr${_PR_NUMBER}', '--no-promote']
+    args: ['gcloud', 'app', 'deploy', 'app.yaml', '-v', 'pr${_PR_NUMBER}', '--no-promote']
 timeout: '1600s'
