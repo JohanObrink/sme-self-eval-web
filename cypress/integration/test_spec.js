@@ -8,21 +8,27 @@ describe('Test', () => {
     cy.get('h1').contains('Testa din verksamhet')
   })
   describe('Step 1', () => {
+    beforeEach(() => {
+      cy.question(0).validate().answer(0)
+      cy.question(1).validate().answer(1)
+      cy.question(2).validate().answer(0)
+      cy.question(3).validate().answer(1)
+      cy.next()
+    })
     it('has the correct headline and number of questions', () => {
       cy.get('h2').contains('Egna åtgärder – verksamheten 1 av 2')
-      cy.get('.question').should('have.length', 5)
+      cy.get('.question').should('have.length', 4)
     })
     describe('Step 2', () => {
       beforeEach(() => {
         cy.question(0).validate().answer(0)
         cy.question(1).validate().answer(1)
-        cy.question(2).validate().answer(2)
-        cy.question(3).validate().answer(0)
+        cy.question(2).validate().answer(0)
         cy.next()
       })
       it('has the correct headline and number of questions', () => {
         cy.get('h2').contains('Egna åtgärder – verksamheten 2 av 2')
-        cy.get('.question').should('have.length', 4)
+        cy.get('.question').should('have.length', 3)
       })
       it('allows navigation previous', () => {
         cy.previous()
@@ -31,7 +37,7 @@ describe('Test', () => {
         beforeEach(() => {
           cy.question(0).validate().answer(0)
           cy.question(1).validate().answer(1)
-          cy.question(2).validate().answer(2)
+          cy.question(2).validate().answer(0)
           cy.next()
         })
         it('has the correct headline and number of questions', () => {
@@ -45,13 +51,13 @@ describe('Test', () => {
           beforeEach(() => {
             cy.question(0).validate().answer(0)
             cy.question(1).validate().answer(1)
-            cy.question(2).validate().answer(2)
-            cy.question(3).validate().answer(0)
+            cy.question(2).validate().answer(0)
+            cy.question(3).validate().answer(1)
             cy.next()
           })
           it('has the correct headline and number of questions', () => {
             cy.get('h2').contains('Stödåtgärder från staten')
-            cy.get('.question').should('have.length', 3)
+            cy.get('.question').should('have.length', 4)
           })
           it('allows navigation previous', () => {
             cy.previous()
@@ -60,7 +66,8 @@ describe('Test', () => {
             beforeEach(() => {
               cy.question(0).validate().answer(0)
               cy.question(1).validate().answer(1)
-              cy.question(2).validate().answer(2)
+              cy.question(2).validate().answer(0)
+              cy.question(3).validate().answer(1)
               cy.next()
             })
             it('has the correct headline and number of questions', () => {
