@@ -18,7 +18,6 @@ describe('Test', () => {
         cy.question(1).validate().answer(1)
         cy.question(2).validate().answer(2)
         cy.question(3).validate().answer(0)
-        cy.question(4).validate().answer(1)
         cy.next()
       })
       it('has the correct headline and number of questions', () => {
@@ -33,7 +32,6 @@ describe('Test', () => {
           cy.question(0).validate().answer(0)
           cy.question(1).validate().answer(1)
           cy.question(2).validate().answer(2)
-          cy.question(3).validate().answer(0)
           cy.next()
         })
         it('has the correct headline and number of questions', () => {
@@ -48,6 +46,7 @@ describe('Test', () => {
             cy.question(0).validate().answer(0)
             cy.question(1).validate().answer(1)
             cy.question(2).validate().answer(2)
+            cy.question(3).validate().answer(0)
             cy.next()
           })
           it('has the correct headline and number of questions', () => {

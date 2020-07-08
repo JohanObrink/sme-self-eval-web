@@ -26,6 +26,7 @@ describe('Report', () => {
     cy.question(0).answer(0)
     cy.question(1).answer(1)
     cy.question(2).answer(2)
+    cy.question(3).answer(0)
     cy.next()
     // Step 5
     cy.question(0).answer(0)
@@ -35,7 +36,7 @@ describe('Report', () => {
     cy.finish()
 
     cy.wait(1000)
-    cy.url().then(url => reportUrl = url)
+    cy.url().then((url) => (reportUrl = url))
   })
   beforeEach(() => {
     cy.visit(reportUrl)
