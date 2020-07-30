@@ -2,8 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import LoadReport from './report/LoadReport'
 import Report from './report/Report'
-import Vote from './report/Vote'
-import { getText } from './form/appTexts'
+import { getText } from './appTexts'
 
 export default () => {
   const { reportId } = useParams()

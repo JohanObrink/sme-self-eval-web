@@ -3,7 +3,7 @@ import { reducer } from './form/formReducer'
 import Form from './form/Form'
 import { form } from './form/data'
 import { ProgressBar } from '@sebgroup/react-components/dist/ProgressBar/ProgressBar'
-import { getText } from './form/appTexts'
+import { getText } from './appTexts'
 
 export default () => {
   const [state, dispatch] = useReducer(reducer, {

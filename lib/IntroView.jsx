@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Button } from '@sebgroup/react-components/dist/Button/Button'
 import { TextBox } from '@sebgroup/react-components/dist/TextBox/TextBox'
 import faArrowRight from './assets/arrow-right.svg'
-import { getText } from './form/appTexts'
+import { getText } from './appTexts'
 
 export default () => {
   const [reportId, setReportId] = useState('')
@@ -12,7 +12,7 @@ export default () => {
     <div className="container intro-page">
       <div className="row">
         <div className="col-12">
-          <p>{getText('label_last update')}</p>
+          <p>{getText('label_lastupdate')}</p>
         </div>
         <div className="col-12">
           <h1>{getText('heading_howaffected')}</h1>
