@@ -5,7 +5,7 @@ import { trackPage, toolStarted, toolCompleted } from '../analytics'
 import FormStep from './FormStep'
 import { actions } from './constants'
 import * as api from '../api'
-import { getText } from './appTexts'
+import { getText } from '../appTexts'
 
 const getNavState = (stepIndex, steps) => ({
   prev: stepIndex > 0,
