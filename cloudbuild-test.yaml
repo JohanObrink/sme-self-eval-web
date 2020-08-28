@@ -16,6 +16,7 @@ steps:
     args: ['run', 'build']
     env:
       - API_HOST=https://api-test-dot-sme-self-eval-tool-99p47-dev.appspot.com/
+      - CMS_URI=https://api.seb.se/open/prod/applicationcontent/v1/content/sme_self_eval_v1%3Flang%3Dsv%26context%3DDefault
       - TRACKING_URL=//assets.adobedtm.com/30e54a9d6c99/f9d07ef22744/launch-065c214c4c39-development.min.js
       - NODE_ENV=test
   - name: 'gcr.io/cloud-builders/gcloud'
