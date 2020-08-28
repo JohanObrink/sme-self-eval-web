@@ -1,5 +1,6 @@
 const { createServer } = require('http')
 
+const port = 1666
 const contentType = 'application/json; charset=utf-8'
 const content = {
   "metadata": { "language": "sv", "application_key": "sme_self_eval_v1", "context": "Default" },
@@ -66,7 +67,7 @@ const content = {
       "label_fillcode": "Fyll i din kod.",
       "link_fetch": "Hämta",
       "button_start": "Starta verktyget",
-      "heading_report": "Starta verktyget",
+      "heading_report": "Checklista – förslag på åtgärder",
       "text_suggestions": "Här ser du våra förslag på åtgärder och vart du kan vända dig för att få hjälp.",
       "text_report": "<p>\nFörslagen är generella och du kan behöva vidta fler åtgärder. Prata med din rådgivare om vilka åtgärder som kan vara aktuella och relevanta för dig. Har du ingen företagsrådgivare är du välkommen att <a href=\"https://seb.se/var-kundservice/contact/c1119-kundservice-foeretag\" target=\"blank\" class=\"external\">kontakta oss.</a>\n</p>\n<p>\n<strong>Vi har ovanligt hög belastning just nu men gör allt för att hjälpa dig snarast möjligt.</strong></p>\n<p><a href=\"https://seb.se/om-seb/coronautbrottet-tips-och-rad-till-dig-som-foretagare\" target=\"blank\" class=\"external\"> Mer om coronautbrottet på seb.se</a></p>",
       "text_disclaimer": "<p>\nFörslagen är generella och du kan behöva vidta fler åtgärder. Prata med din rådgivare om vilka åtgärder som kan vara aktuella och relevanta för dig. Har du ingen företagsrådgivare är du välkommen att <a href=\"https://seb.se/var-kundservice/contact/c1119-kundservice-foeretag\" target=\"blank\" class=\"external\">kontakta oss.</a>\n</p>",
@@ -78,13 +79,22 @@ const content = {
     }
   }
 }
+const cors = {
+  'Access-Control-Allow-Headers': 'content-type',
+  'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  'Access-Control-Allow-Origin': '*',
+  'Vary': 'Access-Control-Request-Headers'
+}
 
 const server = createServer((req, res) => {
-  console.log(req.url)
-  res.writeHead(200, { 'Content-Type': contentType })
-  res.write(JSON.stringify(content))
+  if (req.method === 'OPTIONS') {
+    res.writeHead(204, cors)
+  } else {
+    res.writeHead(200, { 'Content-Type': contentType, 'Access-Control-Allow-Origin': '*' })
+    res.write(JSON.stringify(content))
+  }
   res.end()
 })
-server.listen(5000, () => {
-  console.log('CMS Operational')
+server.listen(port, () => {
+  console.log(`CMS Operational on port ${port}`)
 })

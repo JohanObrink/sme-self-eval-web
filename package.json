@@ -18,9 +18,10 @@
   "scripts": {
     "start:api": "cross-env STORE=memory node ./dev/localApi",
     "start:cms": "node ./dev/localCms",
-    "start:web": "cross-env API_HOST=http://localhost:1337 CMS_URI=https://api.seb.se/open/prod/applicationcontent/v1/content/sme_self_eval_v1%3Flang%3Dsv%26context%3DDefault TRACKING_URL=//assets.adobedtm.com/30e54a9d6c99/f9d07ef22744/launch-065c214c4c39-development.min.js parcel index.njk --no-source-maps",
-    "start:all": "concurrently \"npm:start:api\" \"npm:start:cms\" \"npm:start:web\"",
-    "start": "concurrently \"npm:start:api\" \"npm:start:web\"",
+    "start:web:cms": "cross-env API_HOST=http://localhost:1337 CMS_URI=https://api.seb.se/open/prod/applicationcontent/v1/content/sme_self_eval_v1%3Flang%3Dsv%26context%3DDefault TRACKING_URL=//assets.adobedtm.com/30e54a9d6c99/f9d07ef22744/launch-065c214c4c39-development.min.js parcel index.njk --no-source-maps",
+    "start:web:local": "cross-env API_HOST=http://localhost:1337 CMS_URI=http://localhost:1666/foo/bar TRACKING_URL=//assets.adobedtm.com/30e54a9d6c99/f9d07ef22744/launch-065c214c4c39-development.min.js parcel index.njk --no-source-maps",
+    "start:e2e": "concurrently \"npm:start:api\" \"npm:start:cms\" \"npm:start:web:local\"",
+    "start": "concurrently \"npm:start:api\" \"npm:start:web:cms\"",
     "build": "parcel build index.njk --no-source-maps",
     "lint": "eslint lib/*.{js,jsx} lib/**/*.{js,jsx} --fix",
     "lint:watch": "esw lib/*.{js,jsx} lib/**/*.{js,jsx} --watch --fix --color",
@@ -29,7 +30,7 @@
     "lintAndTest": "npm run lint && npm test",
     "cypress:run": "cypress run",
     "cypress:open": "cypress open",
-    "e2e": "start-server-and-test start:all 1234 cypress:run"
+    "e2e": "start-server-and-test start:e2e \"1234|1337|1666\" cypress:run"
   },
   "bugs": {
     "url": "https://github.com/JohanObrink/sme-self-eval-web/issues"
