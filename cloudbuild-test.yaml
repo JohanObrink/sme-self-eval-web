@@ -1,17 +1,17 @@
 steps:
-  - name: cypress/included:4.4.0
+  - name: cypress/included:5.0.0
     entrypoint: npm
     args: ['ci']
-  - name: cypress/included:4.4.0
+  - name: cypress/included:5.0.0
     entrypoint: npm
     args: ['run', 'lint']
-  - name: cypress/included:4.4.0
+  - name: cypress/included:5.0.0
     entrypoint: npm
     args: ['test']
-  - name: cypress/included:4.4.0
+  - name: cypress/included:5.0.0
     entrypoint: npm
     args: ['run', 'e2e']
-  - name: cypress/included:4.4.0
+  - name: cypress/included:5.0.0
     entrypoint: npm
     args: ['run', 'build']
     env:
