@@ -9,7 +9,9 @@
       "heading_selfeval": "Självtest",
       "label_navleft": "Självtest",
       "label_navright": "Testa din verksamhet",
-      "label_lastupdate": "Senast uppdaterad 2 maj 2020.",
+      "button_back": "Tillbaka",
+      "button_next": "Nästa",
+      "button_finish": "Slutför",
       "heading_howaffected": "Självtest – vad kan du göra och vad kan du få hjälp med?",
       "text_intro": "I tider av kris är det viktigt att få en överblick över ditt företags situation. Med det här självskattningsverktyget vill vi ge dig bättre koll på tänkbara åtgärder som du själv kan vidta och vilken hjälp du kan få från oss och myndigheter.",
       "text_description": "<p>\nFrågorna är generella och alla kanske inte gäller din verksamhet. När du har svarat på frågorna får du en sammanställning med dina svar och förslag på åtgärder.</p>\n<p>\nUppgifterna du fyller i är enbart tillgänglig via koden du får när du är färdig, så se till att notera den. Vi behandlar dina uppgifter enligt <a href=\"https://seb.se/juridik-och-sakerhet/sebs-integritetspolicy\" target=\"blank\" class=\"external\"> vår integritetspolicy.</a></p>",
@@ -25,11 +27,7 @@
       "href_corona": "<a href=\"https://seb.se/om-seb/coronautbrottet-tips-och-rad-till-dig-som-foretagare\" target=\"blank\" className=\"external\">Mer om coronautbrottet på seb.se</a>",
       "label_personalcode": "Din personliga kod",
       "label_bookmark": "Bokmärk den här sidan eller kom tillbaka till den med hjälp av din kod.",
-      "label_testbuisiness": "Testa din verksamhet",
-      "button_back": "Tillbaka",
-      "button_next": "Nästa",
-      "button_finish": "Slutför",
-      "label_": ""
+      "label_testbuisiness": "Testa din verksamhet"
     }
   }
 }

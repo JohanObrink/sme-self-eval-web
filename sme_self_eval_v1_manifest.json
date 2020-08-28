@@ -1,0 +1,203 @@
+{
+  "application_key": "sme_self_eval_v1",
+  "modified_date": "2020-05-14T16:00:00Z",
+  "groups": {
+    "tab_intro": {
+      "display_name": "Introduction",
+      "order": 0
+    },
+    "tab_form": {
+      "display_name": "Form questions",
+      "order": 0
+    },
+    "tab_report": {
+      "display_name": "Report",
+      "order": 0
+    }
+  },
+  "content": {
+    "heading_selfeval": {
+      "default_value": {
+        "sv": "Självtest"
+      },
+      "description": "Header for site",
+      "type": "string"
+    },
+    "label_navprimary": {
+      "default_value": {
+        "sv": "Självtest"
+      },
+      "description": "Primary text in navigation bar",
+      "type": "string"
+    },
+    "label_navsecondary": {
+      "default_value": {
+        "sv": "Testa din verksamhet"
+      },
+      "description": "Secondary text in navigation bar",
+      "type": "string"
+    },
+
+    "button_back": {
+      "default_value": {
+        "sv": "Tillbaka"
+      },
+      "description": "Form back button",
+      "type": "string",
+      "group": "tab_form"
+    },
+    "button_next": {
+      "default_value": {
+        "sv": "Nästa"
+      },
+      "description": "Form next button",
+      "type": "string",
+      "group": "tab_form"
+    },
+    "button_finish": {
+      "default_value": {
+        "sv": "Slutför"
+      },
+      "description": "Form finish button",
+      "type": "string",
+      "group": "tab_form"
+    },
+
+    "label_lastupdate": {
+      "default_value": {
+        "sv": ""
+      },
+      "description": "Las updated - optional",
+      "type": "string",
+      "group": "tab_intro"
+    },
+    "heading_howaffected": {
+      "default_value": {
+        "sv": "Självtest – vad kan du göra och vad kan du få hjälp med?"
+      },
+      "description": "Intro header",
+      "type": "string",
+      "group": "tab_intro"
+    },
+    "text_intro": {
+      "default_value": {
+        "sv": "I tider av kris är det viktigt att få en överblick över ditt företags situation. Med det här självskattningsverktyget vill vi ge dig bättre koll på tänkbara åtgärder som du själv kan vidta och vilken hjälp du kan få från oss och myndigheter."
+      },
+      "description": "Intro sub header",
+      "type": "multiline",
+      "group": "tab_intro"
+    },
+    "text_description": {
+      "default_value": {
+        "sv": "<p>\nFrågorna är generella och alla kanske inte gäller din verksamhet. När du har svarat på frågorna får du en sammanställning med dina svar och förslag på åtgärder.</p>\n<p>\nUppgifterna du fyller i är enbart tillgänglig via koden du får när du är färdig, så se till att notera den. Vi behandlar dina uppgifter enligt <a href=\"https://seb.se/juridik-och-sakerhet/sebs-integritetspolicy\" target=\"blank\" class=\"external\"> vår integritetspolicy.</a></p>"
+      },
+      "description": "Intro description",
+      "type": "markup",
+      "group": "tab_intro"
+    },
+    "label_alreadydone": {
+      "default_value": {
+        "sv": "Har du redan gjort testet?"
+      },
+      "description": "Intro box header",
+      "type": "string",
+      "group": "tab_intro"
+    },
+    "label_fillcode": {
+      "default_value": {
+        "sv": "Fyll i din kod."
+      },
+      "description": "Intro box text",
+      "type": "string",
+      "group": "tab_intro"
+    },
+    "link_fetch": {
+      "default_value": {
+        "sv": "Hämta"
+      },
+      "description": "Intro box text",
+      "type": "string",
+      "group": "tab_intro"
+    },
+    "button_start": {
+      "default_value": {
+        "sv": "Starta verktyget"
+      },
+      "description": "Intro start button",
+      "type": "string",
+      "group": "tab_intro"
+    },
+    "heading_report": {
+      "default_value": {
+        "sv": "Starta verktyget"
+      },
+      "description": "Report header",
+      "type": "string",
+      "group": "tab_report"
+    },
+    "text_suggestions": {
+      "default_value": {
+        "sv": "Här ser du våra förslag på åtgärder och vart du kan vända dig för att få hjälp."
+      },
+      "description": "Report sub header",
+      "type": "multiline",
+      "group": "tab_report"
+    },
+    "text_report": {
+      "default_value": {
+        "sv": "<p>\nFörslagen är generella och du kan behöva vidta fler åtgärder. Prata med din rådgivare om vilka åtgärder som kan vara aktuella och relevanta för dig. Har du ingen företagsrådgivare är du välkommen att <a href=\"https://seb.se/var-kundservice/contact/c1119-kundservice-foeretag\" target=\"blank\" class=\"external\">kontakta oss.</a>\n</p>\n<p>\n<strong>Vi har ovanligt hög belastning just nu men gör allt för att hjälpa dig snarast möjligt.</strong></p>\n<p><a href=\"https://seb.se/om-seb/coronautbrottet-tips-och-rad-till-dig-som-foretagare\" target=\"blank\" class=\"external\"> Mer om coronautbrottet på seb.se</a></p>"
+      },
+      "description": "Report description",
+      "type": "markup",
+      "group": "tab_report"
+    },
+    "text_disclaimer": {
+      "default_value": {
+        "sv": "<p>\nFörslagen är generella och du kan behöva vidta fler åtgärder. Prata med din rådgivare om vilka åtgärder som kan vara aktuella och relevanta för dig. Har du ingen företagsrådgivare är du välkommen att <a href=\"https://seb.se/var-kundservice/contact/c1119-kundservice-foeretag\" target=\"blank\" class=\"external\">kontakta oss.</a>\n</p>"
+      },
+      "description": "Report disclaimer",
+      "type": "markup",
+      "group": "tab_report"
+    },
+    "label_load": {
+      "default_value": {
+        "sv": "Vi har ovanligt hög belastning just nu men gör allt för att hjälpa dig snarast möjligt."
+      },
+      "description": "Report load",
+      "type": "string",
+      "group": "tab_report"
+    },
+    "href_corona": {
+      "default_value": {
+        "sv": "<a href=\"https://seb.se/om-seb/coronautbrottet-tips-och-rad-till-dig-som-foretagare\" target=\"blank\" className=\"external\">Mer om coronautbrottet på seb.se</a>"
+      },
+      "description": "Report corona link",
+      "type": "markup",
+      "group": "tab_report"
+    },
+    "label_personalcode": {
+      "default_value": {
+        "sv": "Din personliga kod"
+      },
+      "description": "Report code",
+      "type": "string",
+      "group": "tab_report"
+    },
+    "label_bookmark": {
+      "default_value": {
+        "sv": "Bokmärk den här sidan eller kom tillbaka till den med hjälp av din kod."
+      },
+      "description": "Report bookmark",
+      "type": "string",
+      "group": "tab_report"
+    },
+    "label_testbuisiness": {
+      "default_value": {
+        "sv": "Testa din verksamhet"
+      },
+      "description": "Report test",
+      "type": "string",
+      "group": "tab_report"
+    }
+  }
+}
