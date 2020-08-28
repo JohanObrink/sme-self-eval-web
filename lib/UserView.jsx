@@ -3,7 +3,7 @@ import { reducer } from './form/formReducer'
 import Form from './form/Form'
 import { form } from './form/data'
 import { ProgressBar } from '@sebgroup/react-components/dist/ProgressBar/ProgressBar'
-import { getText } from './appTexts'
+import { useCMS } from './cms'
 
 export default () => {
   const [state, dispatch] = useReducer(reducer, {
@@ -15,7 +15,7 @@ export default () => {
     <>
       <ProgressBar value={(state.currentStepIndex / (form.steps.length - 1)) * 100} />
       <div className="container">
-        <h1>{getText('label_testbuisiness')}</h1>
+        <h1>{useCMS('label_testbuisiness')}</h1>
         <Form
           form={form}
           data={state.data}

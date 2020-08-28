@@ -4,8 +4,8 @@ import { Button } from '@sebgroup/react-components/dist/Button/Button'
 import { trackPage, toolStarted, toolCompleted } from '../analytics'
 import FormStep from './FormStep'
 import { actions } from './constants'
+import { useCMS } from '../cms'
 import * as api from '../api'
-import { getText } from '../appTexts'
 
 const getNavState = (stepIndex, steps) => ({
   prev: stepIndex > 0,
@@ -19,6 +19,10 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
   const [buttonIsLoading, setButtonIsLoading] = useState(false)
   const [navState, setNavState] = useState(getNavState(stepIndex, form.steps))
   const [currentStep, setCurrentStep] = useState(form.steps[stepIndex])
+
+  const texts = useCMS()
+
+  // Handle changed step index
   useEffect(() => {
     if (stepIndex === 0) {
       toolStarted()
@@ -61,7 +65,7 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
                 dispatch({ type: actions.PREVIOUS })
               }}
             >
-              {getText('button_back')}
+              {texts['button_back']}
             </Button>
           )}
           {navState.next && (
@@ -72,7 +76,7 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
                 dispatch({ type: actions.NEXT })
               }}
             >
-              {getText('button_next')}
+              {texts['button_next']}
             </Button>
           )}
           {!navState.next && (
@@ -84,7 +88,7 @@ const Form = ({ form, stepIndex, dispatch, data }) => {
               }}
               disabled={buttonIsLoading}
             >
-              {getText('button_finish')}
+              {texts['button_finish']}
             </Button>
           )}
         </div>
